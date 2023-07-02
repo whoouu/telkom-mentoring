@@ -5,7 +5,7 @@ const TemplateProfile = ({ name, faculty, bachelor, scrollY, images, interest, a
   return (
     <div
       className={`bg-white w-full h-[1200px] absolute transition-all ${
-        scrollY > 0 ? `-translate-y-${scrollY}` : 'translate-y-0'
+        scrollY > 0 ? `!-translate-y-${scrollY}` : 'translate-y-0'
       } transform-gpu`}
     >
       {/* header */}
