@@ -146,7 +146,7 @@ const Home = () => {
         </div>
 
         {/* card container */}
-        <div className="grid md:grid-cols-2 gap-3.5">
+        <div className="grid md:grid-cols-2 gap-3.5 mb-4">
           {/* card */}
           <MentorCard
             name={'Mubeth Praditya'}
@@ -179,6 +179,55 @@ const Home = () => {
             skills={['Machine Learning', 'Data Science']}
             availableAt={'4 Mei 23, 8.30 PM'}
           />
+        </div>
+
+        <h2 className="text-[18px] font-semibold mb-4">Temukan mentor seru berdasarkan topik</h2>
+        <div className="flex justify-between w-full gap-10">
+          <div className="bg-[#FFEFC4] relative overflow-hidden rounded-lg py-5 h-[258px] flex items-center justify-center py-5 pl-2.5 pr-3.5 w-full">
+            <div className="absolute -top-[28%] -right-[28%] z-30 rounded-full w-[150px] h-[150px] bg-[#FBC415]"></div>
+            <div className="absolute -top-[26%] -right-[26%] z-20 rounded-full w-[150px] h-[150px] bg-[#FAE396]"></div>
+            <div className="absolute -top-[23%] -right-[23%] z-10 rounded-full w-[150px] h-[150px] bg-[#F9DA72]"></div>
+            <div className="z-50">
+              <h3 className="text-[18px] font-semibold mb-2.5">
+                Mulai
+                <br /> Belajar Dengan
+                <br /> UX Design
+              </h3>
+              <p className="text-[12px]">
+                Cari tahu tentang tren UX Design bersama para mentor yang expert, dapatkan insight baru! <br />
+                <span className="text-blue-400">Cari sekarang</span>
+              </p>
+              <p>10+ Mentor</p>
+            </div>
+          </div>
+
+          <div className="bg-[#FFEFC4] relative overflow-hidden rounded-lg py-5 h-[258px] flex items-center justify-center py-5 pl-2.5 pr-3.5 w-full">
+            <div className="absolute -top-[28%] -right-[28%] z-30 rounded-full w-[150px] h-[150px] bg-[#FBC415]"></div>
+            <div className="absolute -top-[26%] -right-[26%] z-20 rounded-full w-[150px] h-[150px] bg-[#FAE396]"></div>
+            <div className="absolute -top-[23%] -right-[23%] z-10 rounded-full w-[150px] h-[150px] bg-[#F9DA72]"></div>
+            <div className="z-50">
+              <h3 className="text-[18px] font-semibold mb-2.5">
+                Cari tahu
+                <br /> Apa itu
+                <br /> Dev Ops
+              </h3>
+              <p>10+ Mentor</p>
+            </div>
+          </div>
+
+          <div className="bg-[#FFEFC4] relative overflow-hidden rounded-lg py-5 h-[258px] flex items-center justify-center py-5 pl-2.5 pr-3.5 w-full">
+            <div className="absolute -top-[28%] -right-[28%] z-30 rounded-full w-[150px] h-[150px] bg-[#FBC415]"></div>
+            <div className="absolute -top-[26%] -right-[26%] z-20 rounded-full w-[150px] h-[150px] bg-[#FAE396]"></div>
+            <div className="absolute -top-[23%] -right-[23%] z-10 rounded-full w-[150px] h-[150px] bg-[#F9DA72]"></div>
+            <div className="z-50">
+              <h3 className="text-[18px] font-semibold mb-2.5">
+                Kenapa kamu
+                <br /> harus belajar
+                <br /> Security Engineer
+              </h3>
+              <p>10+ Mentor</p>
+            </div>
+          </div>
         </div>
       </div>
     </Layout>
