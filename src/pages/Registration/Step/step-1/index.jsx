@@ -65,9 +65,9 @@ const Step1 = ({ onChange, data, setData }) => {
               />
             </div>
 
-            <Button variant="contained" color="error" className="w-full" onClick={() => onChange('next')}>
+            <button className="w-full bg-red-400 p-3 rounded-lg text-white" onClick={() => onChange('next')}>
               Login dengan akun SSO
-            </Button>
+            </button>
           </div>
         </form>
       </div>

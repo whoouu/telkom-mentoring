@@ -9,7 +9,7 @@ function Registration() {
     faculty: '',
     bachelor: '',
     images: '',
-    scrollY: 0,
+    scrollY: '0',
     about: '',
     interest: [],
     isFinal: false,
@@ -33,7 +33,7 @@ function Registration() {
               <TemplateProfile {...registerForm} />
             </div>
           ) : (
-            <img alt="test" src="../../../public/final-regis.png" className="absolute right-0" />
+            <img alt="test" src="/final-regis.png" className="absolute right-0" />
           )}
         </div>
       </div>

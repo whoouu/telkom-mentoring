@@ -6,6 +6,25 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'scrolling-down': {
+          '100%': {
+            transform: "translateY(-8rem)"
+          }
+        },
+        'scrolling-up': {
+          '0%': {
+            transform: "translateY(-8rem)"
+          },
+          '100%': {
+            transform: "translateY(0)"
+          }
+        },
+      },
+      animation: {
+        'scroll-down': "scrolling-down .4s forwards",
+        'scroll-up': "scrolling-up .4s forwards",
+      },
       backgroundImage: {
         'image-gradient': "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.91%, rgba(0, 0, 0, 0.87) 100%)"
       },

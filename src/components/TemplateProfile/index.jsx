@@ -1,9 +1,18 @@
 import { Skeleton } from '@mui/material';
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
 const TemplateProfile = ({ name, faculty, bachelor, scrollY, images, interest, about }) => {
+  const [scroll, setScroll] = useState(0);
+  useEffect(() => {
+    setScroll(scrollY);
+  }, [scrollY]);
   return (
-    <div className={`bg-white w-full h-[1200px] absolute transition-all -translate-y-${scrollY}`}>
+    <div
+      className={`${
+        scroll > 0 ? 'animate-scroll-down' : 'animate-scroll-up'
+      } bg-white w-full h-[1200px] absolute transition ease-in-out`}
+    >
       {/* header */}
       <div className="relative">
         <div className="bg-[#E6F4F9] w-full h-44 overflow-hidden"></div>

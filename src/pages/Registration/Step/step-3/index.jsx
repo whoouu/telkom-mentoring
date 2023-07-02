@@ -65,7 +65,7 @@ const Step3 = ({ onChange, setData, data }) => {
             <ArrowBackIosNewIcon fontSize="small" className="mr-3" />
             Back
           </button>
-          <button className="w-fit bg-red-500 p-3 rounded-lg text-white" onClick={() => onChange('next', '20', true)}>
+          <button className="w-fit bg-red-500 p-3 rounded-lg text-white" onClick={() => onChange('next', 32, true)}>
             Lanjut
           </button>
         </div>

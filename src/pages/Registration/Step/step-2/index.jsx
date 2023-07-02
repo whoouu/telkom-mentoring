@@ -2,6 +2,7 @@ import { Button, IconButton, OutlinedInput } from '@mui/material';
 import { useRef } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const Step2 = ({ onChange, setData, data }) => {
   const topicRef = useRef();
@@ -31,9 +32,18 @@ const Step2 = ({ onChange, setData, data }) => {
           </CopyToClipboard>
         </div>
 
-        <Button variant="contained" color="error" className="w-full" onClick={() => onChange('next', '32')}>
-          Login dengan akun SSO
-        </Button>
+        <div className="flex justify-between items-center">
+          <button
+            className="w-fit bg-white p-3 rounded-lg text-black flex items-center"
+            onClick={() => onChange(null, '0')}
+          >
+            <ArrowBackIosNewIcon fontSize="small" className="mr-3" />
+            Back
+          </button>
+          <button className="w-fit bg-red-500 p-3 rounded-lg text-white" onClick={() => onChange('next', 32, false)}>
+            Lanjut
+          </button>
+        </div>
       </div>
     </>
   );
