@@ -31,7 +31,7 @@ const Step2 = ({ onChange, setData, data }) => {
           </CopyToClipboard>
         </div>
 
-        <Button variant="contained" color="error" className="w-full" onClick={() => onChange('next', '20')}>
+        <Button variant="contained" color="error" className="w-full" onClick={() => onChange('next', '32')}>
           Login dengan akun SSO
         </Button>
       </div>

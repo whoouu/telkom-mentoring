@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 
 const TemplateProfile = ({ name, faculty, bachelor, scrollY, images, interest, about }) => {
   return (
-    <div
-      className={`bg-white w-full h-[1200px] absolute transition-all transform ${
-        scrollY > 0 ? `!-translate-y-${scrollY}` : 'translate-y-0'
-      } transform-gpu`}
-    >
+    <div className={`bg-white w-full h-[1200px] absolute transition-all -translate-y-${scrollY}`}>
       {/* header */}
       <div className="relative">
         <div className="bg-[#E6F4F9] w-full h-44 overflow-hidden"></div>

@@ -37,7 +37,7 @@ const Step4 = ({ data, setData, onChange }) => {
         <div className="flex justify-between items-center">
           <button
             className="w-fit bg-white p-3 rounded-lg text-black flex items-center"
-            onClick={() => onChange(null, '20')}
+            onClick={() => onChange(null, '32')}
           >
             <ArrowBackIosNewIcon fontSize="small" className="mr-3" />
             Back
