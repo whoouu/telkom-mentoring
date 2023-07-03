@@ -4,7 +4,6 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const skillData = ['Data Science', 'Data Analyst', 'Software Engineer'];
 const toolsData = ['Figma', 'Pytorch', 'Tensorflow'];
-
 const Step3 = ({ onChange, setData, data }) => {
   const [interest, setInterest] = useState(skillData[0]);
   const [inputValue, setInputValue] = useState('');
@@ -30,6 +29,15 @@ const Step3 = ({ onChange, setData, data }) => {
               options={skillData}
               onChange={(event, newValue) => {
                 setInterest(newValue);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  setData((prevState) => ({
+                    ...prevState,
+                    interest: [...prevState.interest, { title: interest, background: generateColor() }],
+                  }));
+                  e.target.value = '';
+                }
               }}
               inputValue={inputValue}
               onInputChange={(event, newInputValue) => {
