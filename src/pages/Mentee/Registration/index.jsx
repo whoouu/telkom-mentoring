@@ -1,5 +1,5 @@
-import AuthLayout from '../../components/Layout/AuthLayout';
-import TemplateProfile from '../../components/TemplateProfile';
+import AuthLayout from '../../../components/Layout/AuthLayout';
+import TemplateProfile from '../../../components/TemplateProfile';
 import { useState } from 'react';
 import MultiStepRegistration from './MultiStepRegistration';
 

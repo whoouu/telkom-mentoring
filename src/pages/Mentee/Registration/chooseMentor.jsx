@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import MentorCard from '../../components/Card/MentorCard';
-import AuthLayout from '../../components/Layout/AuthLayout';
+import MentorCard from '../../../components/Card/MentorCard';
+import AuthLayout from '../../../components/Layout/AuthLayout';
 
 const ChooseMentor = () => {
   return (

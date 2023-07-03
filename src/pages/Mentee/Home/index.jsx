@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
-import Layout from '../../components/Layout/Layout';
+import Layout from '../../../components/Layout/Layout';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Link } from 'react-router-dom';
-import MentorCard from '../../components/Card/MentorCard';
+import MentorCard from '../../../components/Card/MentorCard';
 import { Box, Modal } from '@mui/material';
 import { useEffect, useState } from 'react';
 

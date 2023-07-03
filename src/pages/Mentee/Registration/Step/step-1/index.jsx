@@ -1,4 +1,4 @@
-import { Button, OutlinedInput } from '@mui/material';
+import { OutlinedInput } from '@mui/material';
 
 const Step1 = ({ onChange, data, setData }) => {
   const imageChange = (e) => {

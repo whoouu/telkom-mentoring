@@ -1,5 +1,4 @@
-import { Button } from '@mui/material';
-import AuthLayout from '../../components/Layout/AuthLayout';
+import AuthLayout from '../../../components/Layout/AuthLayout';
 import { SplideSlide, Splide } from '@splidejs/react-splide';
 import { Link } from 'react-router-dom';
 

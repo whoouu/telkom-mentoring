@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Step1 from '../Step/step-1';
 import Step2 from '../Step/step-2';
 import PropTypes from 'prop-types';

@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import Layout from '../../components/Layout/Layout';
+import Layout from '../../../components/Layout/Layout';
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';

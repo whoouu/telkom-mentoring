@@ -1,13 +1,13 @@
 import { Box, IconButton, Modal } from '@mui/material';
-import FullLayout from '../../components/Layout/FullLayout';
+import FullLayout from '../../../components/Layout/FullLayout';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import { SplideSlide, Splide } from '@splidejs/react-splide';
 import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import { clockBook, dayBook } from '../../constants/bookingMentor';
-import useMentoringStore from '../../stateManagement/store';
+import { clockBook, dayBook } from '../../../constants/bookingMentor';
+import useMentoringStore from '../../../stateManagement/store';
 
 const MentorProfileCard = ({ children }) => {
   return <div className="rounded-lg shadow-lg px-5 py-3.5 bg-white">{children}</div>;

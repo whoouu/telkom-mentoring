@@ -1,6 +1,6 @@
 import { OutlinedInput } from '@mui/material';
-import Layout from '../../components/Layout/Layout';
-import ImageCard from '../../components/Card/ImageCard';
+import Layout from '../../../components/Layout/Layout';
+import ImageCard from '../../../components/Card/ImageCard';
 
 const Mentors = () => {
   return (
