@@ -1,9 +1,9 @@
-import AuthLayout from '../../../components/Layout/AuthLayout';
-import TemplateProfile from '../../../components/TemplateProfile';
 import { useState } from 'react';
 import MultiStepRegistration from './MultiStepRegistration';
+import AuthLayout from '../../../components/Layout/AuthLayout';
+import TemplateProfile from '../../../components/TemplateProfile';
 
-function Registration() {
+function RegistrationMentor() {
   const [registerForm, setRegisterForm] = useState({
     name: '',
     faculty: '',
@@ -41,4 +41,4 @@ function Registration() {
   );
 }
 
-export default Registration;
+export default RegistrationMentor;

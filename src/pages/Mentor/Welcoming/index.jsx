@@ -27,16 +27,22 @@ function WelcomingMentor() {
               Terhubung dan temukan mentor terbaik sesuai passionmu. Lebih dari 50+ mentor dari berbagai fakultas di
               Telkom University.
             </p>
-            <div className="w-full gap-10 mb-8 relative">
-              <h1 className="font-semibold text-[28px]">Mentor</h1>
-              <img alt="test" src="/mentor-welcoming.png" />
+            <div className="w-full gap-10 mb-8 relative w-fit h-fit">
+              <div className="flex flex-col z-10 absolute bottom-16 left-10 text-white">
+                <h1 className="font-semibold text-[28px]">Mentor</h1>
+                <p>
+                  Mentor adalah seorang dosen berbagai background dari beberapa Fakultas di Tel-U. Mentor dapat
+                  memberikan topik sesuai expertisenya masing masing.
+                </p>
+              </div>
+              <img alt="test" src="/mentor-welcoming.png" className="" />
             </div>
             <h1 className="text-[28px] font-semibold mb-3">Petunjuk Pengaturan Akun</h1>
             <p className="text-[14px] mb-8">
               Berdasarkan akun SSOmu akun kamu terdaftar sebagai Group Pengguna Mahasiswa.
             </p>
-            <Link to="/register">
-              <button className="w-full bg-red-400 p-3 rounded-lg text-white">Lanjut Registrasi Sebagai Mentee</button>
+            <Link to="/admin/register">
+              <button className="w-full bg-red-400 p-3 rounded-lg text-white">Lanjut Registrasi Sebagai Mentor</button>
             </Link>
           </div>
         </div>

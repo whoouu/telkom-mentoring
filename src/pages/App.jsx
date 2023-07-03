@@ -11,6 +11,8 @@ import ChooseMentor from './Mentee/Registration/chooseMentor';
 // mentor
 import MentorLogin from './Login/mentor-login';
 import WelcomingMentor from './Mentor/Welcoming';
+import RegistrationMentor from './Mentor/Registration';
+import HomeMentor from './Mentor/Home';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
       {/* mentor link */}
       <Route path="/admin" element={<MentorLogin />} />
       <Route path="/admin/welcoming-mentor" element={<WelcomingMentor />} />
+      <Route path="/admin/register" element={<RegistrationMentor />} />
+      <Route path="/admin/home" element={<HomeMentor />} />
     </Routes>
   );
 }
