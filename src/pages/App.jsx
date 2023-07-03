@@ -13,6 +13,10 @@ import MentorLogin from './Login/mentor-login';
 import WelcomingMentor from './Mentor/Welcoming';
 import RegistrationMentor from './Mentor/Registration';
 import HomeMentor from './Mentor/Home';
+import BookingMentor from './Mentor/Booking';
+import Schedule from './Mentor/Schedule';
+import Messages from './Mentee/Messages';
+import MessagesMentor from './Mentor/Messages';
 
 function App() {
   return (
@@ -20,6 +24,7 @@ function App() {
       <Route index element={<Login />} />
       <Route path="/welcoming" element={<Welcoming />} />
       <Route path="/register" element={<Registration />} />
+      <Route path="/messages" element={<Messages />} />
       <Route path="/choose-mentor" element={<ChooseMentor />} />
       <Route path="/home" element={<Home />} />
       <Route path="/bookings" element={<Bookings />} />
@@ -32,6 +37,9 @@ function App() {
       <Route path="/admin/welcoming-mentor" element={<WelcomingMentor />} />
       <Route path="/admin/register" element={<RegistrationMentor />} />
       <Route path="/admin/home" element={<HomeMentor />} />
+      <Route path="/admin/bookings" element={<BookingMentor />} />
+      <Route path="/admin/schedule" element={<Schedule />} />
+      <Route path="/admin/messages" element={<MessagesMentor />} />
     </Routes>
   );
 }

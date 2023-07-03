@@ -35,16 +35,57 @@ const RightSidebar = () => {
 };
 
 const NotificationCard = () => {
+  const [expanded, setExpanded] = useState(false);
   return (
     <div className="border rounded-lg p-5">
       <div className="flex justify-between">
         <p>
           Sesi mentoring bareng <span className="text-red-300">Mubeth Praditya</span>
         </p>
-        <p className="text-neutral-400 text-[16px] font-light">Details</p>
+        <button className="text-neutral-400 text-[16px] font-light" onClick={() => setExpanded(!expanded)}>
+          Details
+        </button>
       </div>
+      {/* <div className="flex gap-10 mt-5">
+        <div className="flex items-center">
+          <img alt="test" src="/icon-calendar.svg" className="mr-2" />
+          <p>Sabtu, Mei 28</p>
+        </div>
+        <div className="flex items-center">
+          <img alt="test" src="/Sidebar/icon-booking.svg" className="mr-2" />
+          <p>9 PM - 10 PM</p>
+        </div>
+      </div> */}
+
+      {expanded && (
+        <div>
+          <p className="text-neutral-500 text-[16px] my-3">Mentor</p>
+
+          <div className="flex gap-3 mb-3">
+            <div className="w-12 h-12 rounded-full overflow-hidden">
+              <img alt="test" src="/default-person.avif" />
+            </div>
+            <div className="flex flex-col justify-center w-full">
+              <p className="inline text-[18px]">Anakin Skywalker</p>
+              <p className="inline text-[14px] text-neutral-400">Online</p>
+            </div>
+          </div>
+
+          <p className="text-neutral-500 text-[16px] mb-2.5">Catatan: </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed viverra ligula, et pharetra diam. Nulla
+            facilisi. Mauris vitae lacus tellus. Suspendisse euismod diam vitae dapibus vulputate. Sed viverra efficitur
+            purus efficitur mattis. Duis vel diam eget urna suscipit fringilla. Donec at purus molestie, bibendum elit
+            id, feugiat sapien.
+          </p>
+          <p className="text-neutral-500 text-[16px] my-2.5">Pesan</p>
+          <p>Hi Name. Boleh reschedule ke jam ini nggak soalnya saya ada acara mendadak </p>
+        </div>
+      )}
 
       {/* info */}
+      {/* <h1 className="text-[18px] mb-3 mt-5">Request untuk Reschedule</h1>
+      <p className="text-neutral-500 text-[16px]">Jadwal Baru</p> */}
       <div className="flex gap-10 mt-5">
         <div className="flex items-center">
           <img alt="test" src="/icon-calendar.svg" className="mr-2" />

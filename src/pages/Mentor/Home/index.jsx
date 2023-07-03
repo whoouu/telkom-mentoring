@@ -35,14 +35,43 @@ const RightSidebar = () => {
 };
 
 const NotificationCard = () => {
+  const [expanded, setExpanded] = useState(false);
   return (
     <div className="border rounded-lg p-5">
       <div className="flex justify-between">
         <p>
           Sesi mentoring bareng <span className="text-red-300">Mubeth Praditya</span>
         </p>
-        <p className="text-neutral-400 text-[16px] font-light">Details</p>
+        <button className="text-neutral-400 text-[16px] font-light" onClick={() => setExpanded(!expanded)}>
+          Details
+        </button>
       </div>
+
+      {expanded && (
+        <div>
+          <p className="text-neutral-500 text-[16px] my-3">Mentor</p>
+
+          <div className="flex gap-3 mb-3">
+            <div className="w-12 h-12 rounded-full overflow-hidden">
+              <img alt="test" src="/default-person.avif" />
+            </div>
+            <div className="flex flex-col justify-center w-full">
+              <p className="inline text-[18px]">Anakin Skywalker</p>
+              <p className="inline text-[14px] text-neutral-400">Online</p>
+            </div>
+          </div>
+
+          <p className="text-neutral-500 text-[16px] mb-2.5">Catatan: </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed viverra ligula, et pharetra diam. Nulla
+            facilisi. Mauris vitae lacus tellus. Suspendisse euismod diam vitae dapibus vulputate. Sed viverra efficitur
+            purus efficitur mattis. Duis vel diam eget urna suscipit fringilla. Donec at purus molestie, bibendum elit
+            id, feugiat sapien.
+          </p>
+          <p className="text-neutral-500 text-[16px] my-2.5">Pesan</p>
+          <p>Hi Name. Boleh reschedule ke jam ini nggak soalnya saya ada acara mendadak </p>
+        </div>
+      )}
 
       {/* info */}
       <div className="flex gap-10 mt-5">
@@ -126,7 +155,7 @@ const HomeMentor = () => {
 
   console.log(booking);
   return (
-    <Layout rightSidebar={<RightSidebar />}>
+    <Layout isMentor={true} rightSidebar={<RightSidebar />}>
       {/* left side */}
       <div className="flex-1 overflow-auto py-8 px-14">
         <h1 className="text-[28px] font-bold mb-5">Welcome</h1>
@@ -135,98 +164,21 @@ const HomeMentor = () => {
           <span className="text-turqouise-500">Jadwal Tersedia</span>
         </p>
 
-        <NotificationCard />
-        {/* card container description */}
-        <div className="flex justify-between mt-5 mb-3">
-          <p>Mentor yang sesuai preferensimu</p>
-          <Link className="flex gap-2 text-[14px] items-center text-turqouise-500">
-            Lihat Semua <ChevronRightIcon />
-          </Link>
+        <div className="flex flex-col gap-10 mb-10">
+          <NotificationCard />
+          <NotificationCard />
         </div>
 
-        {/* card container */}
-        <div className="grid md:grid-cols-2 gap-3.5 mb-4">
-          {/* card */}
-          <MentorCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-
-          <MentorCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-
-          <MentorCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-
-          <MentorCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-        </div>
-
-        <h2 className="text-[18px] font-semibold mb-4">Temukan mentor seru berdasarkan topik</h2>
-        <div className="flex justify-between w-full gap-10">
-          <div className="bg-[#FFEFC4] relative overflow-hidden rounded-lg py-5 h-[258px] flex items-center justify-center py-5 pl-2.5 pr-3.5 w-full">
-            <div className="absolute -top-[28%] -right-[28%] z-30 rounded-full w-[150px] h-[150px] bg-[#FBC415]"></div>
-            <div className="absolute -top-[26%] -right-[26%] z-20 rounded-full w-[150px] h-[150px] bg-[#FAE396]"></div>
-            <div className="absolute -top-[23%] -right-[23%] z-10 rounded-full w-[150px] h-[150px] bg-[#F9DA72]"></div>
-            <div className="z-50">
-              <h3 className="text-[18px] font-semibold mb-2.5">
-                Mulai
-                <br /> Belajar Dengan
-                <br /> UX Design
-              </h3>
-              <p className="text-[12px]">
-                Cari tahu tentang tren UX Design bersama para mentor yang expert, dapatkan insight baru! <br />
-                <span className="text-blue-400">Cari sekarang</span>
-              </p>
-              <p>10+ Mentor</p>
-            </div>
+        <div className="relative w-full">
+          <div className="absolute text-white bottom-10 left-10">
+            <h1 className="text-[28px] font-semibold">Temukan talents anda sekarang!</h1>
+            <p className="text-[18px] mb-5">Anda bisa mencari talents dari mahasiswa yang pernah anda mentoring!</p>
+            <button className="bg-gradient-to-b from-[#FF3E8F] to-[#FFBA8F] rounded-lg p-3 text-neutral-800 flex gap-3 items-center">
+              <img alt="test" src="/send.png" />
+              Discover Now
+            </button>
           </div>
-
-          <div className="bg-[#FFEFC4] relative overflow-hidden rounded-lg py-5 h-[258px] flex items-center justify-center py-5 pl-2.5 pr-3.5 w-full">
-            <div className="absolute -top-[28%] -right-[28%] z-30 rounded-full w-[150px] h-[150px] bg-[#FBC415]"></div>
-            <div className="absolute -top-[26%] -right-[26%] z-20 rounded-full w-[150px] h-[150px] bg-[#FAE396]"></div>
-            <div className="absolute -top-[23%] -right-[23%] z-10 rounded-full w-[150px] h-[150px] bg-[#F9DA72]"></div>
-            <div className="z-50">
-              <h3 className="text-[18px] font-semibold mb-2.5">
-                Cari tahu
-                <br /> Apa itu
-                <br /> Dev Ops
-              </h3>
-              <p>10+ Mentor</p>
-            </div>
-          </div>
-
-          <div className="bg-[#FFEFC4] relative overflow-hidden rounded-lg py-5 h-[258px] flex items-center justify-center py-5 pl-2.5 pr-3.5 w-full">
-            <div className="absolute -top-[28%] -right-[28%] z-30 rounded-full w-[150px] h-[150px] bg-[#FBC415]"></div>
-            <div className="absolute -top-[26%] -right-[26%] z-20 rounded-full w-[150px] h-[150px] bg-[#FAE396]"></div>
-            <div className="absolute -top-[23%] -right-[23%] z-10 rounded-full w-[150px] h-[150px] bg-[#F9DA72]"></div>
-            <div className="z-50">
-              <h3 className="text-[18px] font-semibold mb-2.5">
-                Kenapa kamu
-                <br /> harus belajar
-                <br /> Security Engineer
-              </h3>
-              <p>10+ Mentor</p>
-            </div>
-          </div>
+          <img alt="test" src="/banner-home.png" className="w-full object-fit" />
         </div>
       </div>
     </Layout>

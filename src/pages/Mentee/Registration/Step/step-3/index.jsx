@@ -1,9 +1,13 @@
-import { OutlinedInput } from '@mui/material';
+import { OutlinedInput, Autocomplete, TextField } from '@mui/material';
 import { useState } from 'react';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
+const skillData = ['Data Science', 'Data Analyst', 'Software Engineer'];
+const toolsData = ['Figma', 'Pytorch', 'Tensorflow'];
+
 const Step3 = ({ onChange, setData, data }) => {
-  const [interest, setInterest] = useState('');
+  const [interest, setInterest] = useState(skillData[0]);
+  const [inputValue, setInputValue] = useState('');
 
   const generateColor = () => {
     const randomColor = Math.floor(Math.random() * 16777215)
@@ -20,25 +24,29 @@ const Step3 = ({ onChange, setData, data }) => {
         <div className="mt-5">
           <div className="mb-5">
             <p>Di bidang apa kamu ingin mendapatkan mentoring?</p>
-            <OutlinedInput
-              placeholder="+deskripsi"
-              onChange={(e) => setInterest(e.target.value)}
-              className="w-full"
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  setData((prevState) => ({
-                    ...prevState,
-                    interest: [...prevState.interest, { title: interest, background: generateColor() }],
-                  }));
-                  e.target.value = '';
-                }
+            <Autocomplete
+              disablePortal
+              id="combo-box-demo"
+              options={skillData}
+              onChange={(event, newValue) => {
+                setInterest(newValue);
               }}
+              inputValue={inputValue}
+              onInputChange={(event, newInputValue) => {
+                setInputValue(newInputValue);
+              }}
+              renderInput={(params) => <TextField {...params} placeholder="+deskripsi" className="w-full" />}
             />
           </div>
 
           <div className="mb-5">
             <p>Sebutkan spesifik tools yang ingin kamu kembangkan (Optional)</p>
-            <OutlinedInput placeholder="+deskripsi" className="w-full" />
+            <Autocomplete
+              disablePortal
+              id="combo-box-demo"
+              options={toolsData}
+              renderInput={(params) => <TextField {...params} />}
+            />
           </div>
 
           <div className="mb-5">
