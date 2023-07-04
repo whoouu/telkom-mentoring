@@ -28,7 +28,7 @@ function MentorLogin() {
                     </IconButton>
                   }
                 />
-                <Link to={'/welcoming'}>
+                <Link to={'/admin/welcoming-mentor'}>
                   <button className="w-full bg-red-400 p-3 rounded-lg text-white">Login dengan akun SSO</button>
                 </Link>
               </div>
