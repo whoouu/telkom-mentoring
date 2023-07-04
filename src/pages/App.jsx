@@ -17,6 +17,7 @@ import BookingMentor from './Mentor/Booking';
 import Schedule from './Mentor/Schedule';
 import Messages from './Mentee/Messages';
 import MessagesMentor from './Mentor/Messages';
+import TalentMentor from './Mentor/Talent';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
       <Route path="/admin/bookings" element={<BookingMentor />} />
       <Route path="/admin/schedule" element={<Schedule />} />
       <Route path="/admin/messages" element={<MessagesMentor />} />
+      <Route path="/admin/talent" element={<TalentMentor />} />
     </Routes>
   );
 }
