@@ -9,9 +9,11 @@ function RegistrationMentor() {
     faculty: '',
     bachelor: '',
     images: '',
-    scrollY: '0',
+    scolarUrl: '',
+    linkedinUrl: '',
     about: '',
-    interest: [],
+    studyHistory: '',
+    workHistory: '',
     isFinal: false,
     progress: 0,
   });
@@ -30,7 +32,7 @@ function RegistrationMentor() {
           {/* slider */}
           {!registerForm.isFinal ? (
             <div className="overflow-hidden absolute w-full h-[650px] bottom-0 rounded-lg">
-              <TemplateProfile {...registerForm} />
+              <TemplateProfile dataMentor={registerForm} isMentor={true} />
             </div>
           ) : (
             <img alt="test" src="/final-regis.png" className="absolute right-0" />

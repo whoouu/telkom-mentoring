@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { navigationSidebar, navigationSidebarMentor } from '../../constants/naivgationSidebar';
 import { navigationList, navigationListMentor } from '../../constants/navigation';
+import { navigationSidebar, navigationSidebarMentor } from '../../constants/navigationSidebars';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 

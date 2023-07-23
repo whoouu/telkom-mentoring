@@ -5,7 +5,7 @@ import IconBooking from "../../public/Sidebar/icon-booking.svg";
 import IconCalendar from "../../public/icon-calendar.svg";
 
 
-const navigationSidebar = [
+export const navigationSidebar = [
     {
         id: 1,
         title: "Home",
@@ -32,7 +32,7 @@ const navigationSidebar = [
     },
 ]
 
-const navigationSidebarMentor = [
+export const navigationSidebarMentor = [
     {
         id: 1,
         title: "Home",
@@ -58,6 +58,3 @@ const navigationSidebarMentor = [
         icon: IconCalendar,
     },
 ]
-
-
-export { navigationSidebarMentor, navigationSidebar };

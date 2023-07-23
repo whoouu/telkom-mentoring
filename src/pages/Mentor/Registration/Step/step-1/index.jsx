@@ -57,7 +57,7 @@ const Step1 = ({ onChange, data, setData }) => {
             </div>
 
             <div className="w-full">
-              <p className="font-bold mb-3">Jurusan</p>
+              <p className="font-bold mb-3">Dosen Jurusan</p>
               <OutlinedInput
                 className="w-full"
                 placeholder="jurusan anda"

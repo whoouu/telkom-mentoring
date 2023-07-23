@@ -1,4 +1,4 @@
-const navigationListMentor = [
+export const navigationListMentor = [
     {
         id: 1,
         title: "Home",
@@ -16,7 +16,7 @@ const navigationListMentor = [
     },
 ]
 
-const navigationList = [
+export const navigationList = [
     {
         id: 1,
         title: "Home",
@@ -33,5 +33,3 @@ const navigationList = [
         link: "/profile"
     },
 ]
-
-export { navigationList, navigationListMentor };

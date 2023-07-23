@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Box, IconButton, Tab, Tabs, Typography } from '@mui/material';
 import Layout from '../../../components/Layout/Layout';
 import { PropTypes } from 'prop-types';
@@ -5,6 +6,7 @@ import { useState } from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
+import { talents } from '../../../constants/talents';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -18,7 +20,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ py: 3 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -39,17 +41,17 @@ function a11yProps(index) {
   };
 }
 
-const CardTalent = () => {
+const CardTalent = (props) => {
   return (
-    <div className="w-full bg-white p-3 rounded-lg border border-neutral-800">
+    <div className="w-full bg-white p-5 rounded-lg border border-neutral-800">
       <div className="flex flex-wrap gap-3 mb-5">
         <div className="rounded-full w-14 h-14 overflow-hidden">
           <img alt="test" src="/default-person.avif" />
         </div>
 
         <div className="flex-1 flex flex-col">
-          <h1 className="font-semibold text-[24px]">Anakin Skywalker</h1>
-          <p className="text-[14px]">S1 Sistem Informasi</p>
+          <h1 className="font-semibold text-[24px]">{props.name}</h1>
+          <p className="text-[14px]">{props.class}</p>
         </div>
 
         <IconButton className="w-10 h-10">
@@ -59,11 +61,11 @@ const CardTalent = () => {
 
       {/* body card */}
       <div className="flex justify-between items-center my-3">
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center">
           <AccessTimeIcon />
           <p className="text-[14px]">Last mentoring</p>
         </div>
-        <p>Today, 28 Mei 2023</p>
+        <p>{props.updatedMentoring}</p>
       </div>
 
       <div className="flex justify-between items-center my-3">
@@ -72,8 +74,14 @@ const CardTalent = () => {
           <p className="text-[14px]">Interest</p>
         </div>
         <div className="flex gap-3 text-[14px]">
-          <p className="p-3 rounded-lg border border-neutral-800">Frontend</p>
-          <p className="p-3 rounded-lg border border-neutral-800">UI/UX</p>
+          {props.interest &&
+            props.interest.map((data, index) => {
+              return (
+                <p key={index} className="p-3 rounded-lg border border-neutral-800">
+                  {data}
+                </p>
+              );
+            })}
         </div>
       </div>
 
@@ -83,7 +91,14 @@ const CardTalent = () => {
           <p className="text-[14px]">Skill</p>
         </div>
         <div className="flex gap-3 text-[14px]">
-          <p className="p-3 rounded-lg bg-red-100">Figma</p>
+          {props.skill &&
+            props.skill.map((data, index) => {
+              return (
+                <p key={index} className="p-3 rounded-lg bg-red-100">
+                  {data}
+                </p>
+              );
+            })}
         </div>
       </div>
 
@@ -105,7 +120,7 @@ const TalentMentor = () => {
   };
   return (
     <Layout isMentor={true}>
-      <div className="w-full px-10 py-5">
+      <div className="w-full px-10 py-5 overflow-auto">
         <div className="relative w-full">
           <div className="absolute text-white bottom-10 left-10">
             <h1 className="text-[28px] font-semibold">Temukan talents anda sekarang!</h1>
@@ -118,19 +133,17 @@ const TalentMentor = () => {
           <img alt="test" src="/banner-home.png" className="w-full object-fit" />
         </div>
 
-        <Box>
+        <Box className="mt-5">
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
             <Tab label="Talents" {...a11yProps(0)} className="mr-5" />
             <Tab label="Saved" {...a11yProps(0)} className="mr-5" />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <div className="grid grid-cols-2 gap-5">
-            <CardTalent />
-            <CardTalent />
-
-            <CardTalent />
-            <CardTalent />
+          <div className="grid grid-cols-2 p-0 gap-8">
+            {talents.map((data) => {
+              return <CardTalent {...data} key={data.id} />;
+            })}
           </div>
         </TabPanel>
         <TabPanel value={value} index={1}>
