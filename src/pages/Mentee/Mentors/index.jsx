@@ -1,6 +1,7 @@
 import { OutlinedInput } from '@mui/material';
 import Layout from '../../../components/Layout/Layout';
 import ImageCard from '../../../components/Card/ImageCard';
+import { MentorsList } from '../../../constants/mentorList';
 
 const Mentors = () => {
   return (
@@ -15,79 +16,9 @@ const Mentors = () => {
         </div>
         {/* container card */}
         <div className="w-full grid gap-4 mt-5 sm:grid-cols-2 md:grid-cols-4">
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-          <ImageCard
-            name={'Mubeth Praditya'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
+          {MentorsList.map((data) => {
+            return <ImageCard {...data} />;
+          })}
         </div>
       </div>
     </Layout>

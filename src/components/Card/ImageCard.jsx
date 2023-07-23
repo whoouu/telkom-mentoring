@@ -4,11 +4,11 @@ import IconStar from '../../../public/icon-star.svg';
 import IconCollege from '../../../public/icon-college.svg';
 import { Link } from 'react-router-dom';
 
-const ImageCard = ({ name, faculty, count, skills, availableAt }) => {
+const ImageCard = ({ name, faculty, count, skills, availableAt, image }) => {
   return (
     <div className="rounded-lg border w-full">
       <div className="overflow-hidden w-full rounded-lg relative">
-        <img alt="test" src="/thumbnail.avif" className="object-cover bg-center w-full" />
+        <img alt="test" src={image} className="object-cover bg-center w-full" />
         <div className="absolute w-full h-full z-0 bg-gradient-to-b from-transparent top-0 to-[#000]"></div>
         <div className="absolute bottom-0 px-3 text-white">
           <p className="mt-3 mb-3 text-[14px]">{name}</p>
