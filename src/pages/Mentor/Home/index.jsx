@@ -4,29 +4,79 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Box, MenuItem, Modal, OutlinedInput, Select } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { DatePicker } from '@mui/x-date-pickers';
+import { clockBook, dayBook } from '../../../constants/bookingMentor';
+import { CalendarCard } from '../../Mentee/MentorProfile';
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 
 const RightSidebar = () => {
+  const [active, setActive] = useState(null);
+  const [activeClock, setActiveClock] = useState(null);
+
   return (
     <>
       {/* right side */}
       <div className="flex-2 pr-20 pl-10 pt-10">
-        <div className="border rounded-lg p-5 w-[366px]">
-          <h2 className="text-[20px] mb-5">Topik lain untukmu</h2>
-          <div className="flex justify-between items-center mb-4">
-            <div>
-              <p>Siapkan Internship Pertamamu</p>
-              <p className="text-[12px]">10+ Mentor</p>
-            </div>
-            <ChevronRightIcon />
+        <div className="mb-3 border rounded-lg p-3 w-[366px]">
+          <h2 className="text-[18px] font-bold">Jadwal Tersedia</h2>
+          <hr className="mb-5 mt-3" />
+          <div className="flex gap-5">
+            {dayBook.map((data) => {
+              return (
+                <CalendarCard
+                  {...data}
+                  key={data.id}
+                  isActive={active === data.id}
+                  onClick={() => {
+                    setBooking((prevState) => ({ ...prevState, day: data.day, date: data.date }));
+                    setActive(data.id);
+                  }}
+                />
+              );
+            })}
           </div>
 
-          <div className="flex justify-between items-center">
-            <div>
-              <p>ChatGPT Hacks</p>
-              <p className="text-[12px]">oleh Luthfi Adriansyah, Ph.D</p>
-            </div>
-            <ChevronRightIcon />
+          <h2 className="text-[18px] font-bold mt-5">Jam Tersedia</h2>
+          <hr className="mb-5 mt-3" />
+          <div className="flex gap-3">
+            {clockBook.map((data) => {
+              return (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+                <button
+                  onClick={() => {
+                    setBooking((prevState) => ({ ...prevState, clock: data.clock }));
+                    setActiveClock(data.id);
+                  }}
+                  key={data.id}
+                  className={` ${
+                    activeClock === data.id ? 'bg-neutral-300' : ''
+                  } cursor-pointer border border-neutral-400 rounded-lg p-3 transition-all hover:border-black`}
+                >
+                  <p>{data.clock}</p>
+                </button>
+              );
+            })}
           </div>
+
+          <button onClick={() => setIsOpen(true)} className="p-2.5 w-full rounded-lg bg-turqouise-500 text-white mt-5">
+            <AddOutlinedIcon />
+            Tambah Jadwal Tersedia
+          </button>
+        </div>
+        <div className="border rounded-lg p-5 w-[366px]">
+          <h2 className="text-[20px] mb-5">Review</h2>
+          <div className="flex gap-2.5 mb-5">
+            <img alt="img" src="/default-person.avif" className="rounded-full w-16 h-16 object-cover" />
+            <div className="flex-1">
+              <h3 className="font-semibold text-[20px]">Karyo</h3>
+              <p className="text-[14px]">S1 Sistem Informasi</p>
+              <p className="text-[12px]">13 Maret 2023</p>
+            </div>
+          </div>
+          <p>
+            Pernah mentoring dengan pak Faqih ngebahas apa yang perlu disiapin buat jadi data scientist, dari sesi
+            mentoring ini pikiran saya terbuka dan jadi lebih well prepared buat yang perlu disiapin selama kuliah.
+          </p>
         </div>
       </div>
     </>
@@ -379,8 +429,8 @@ const HomeMentor = () => {
       {/* left side */}
       <BookModal open={openModal} close={setOpenModal} />
       <div className="flex-1 overflow-auto py-8 px-14">
-        <h1 className="text-[28px] font-bold mb-5">Welcome</h1>
-        <p className="text-[18px] mb-3">
+        <h1 className="text-[28px] font-bold mb-2">Welcome</h1>
+        <p className="text-[16px] text-neutral-600 mb-5">
           Selamat datang di Telkom Mentoring! Anda dapat menambah{' '}
           <span className="text-turqouise-500">Jadwal Tersedia</span>
         </p>

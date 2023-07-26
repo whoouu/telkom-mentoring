@@ -9,7 +9,10 @@ const Layout = ({ children, rightSidebar, isMentor }) => {
     <div className="w-full h-[87.5vh]">
       <Header data={isMentor ? navigationListMentor : navigationList} />
       <div className="flex h-full">
-        <Sidebar data={isMentor ? navigationSidebarMentor : navigationSidebar} />
+        <Sidebar
+          name={isMentor ? 'Mubeth Praditya' : 'Muhammad Harris Hassan'}
+          data={isMentor ? navigationSidebarMentor : navigationSidebar}
+        />
         {children}
         {rightSidebar}
       </div>

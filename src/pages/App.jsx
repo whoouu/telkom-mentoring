@@ -33,7 +33,7 @@ function App() {
       <Route path="/notification" element={<Notification />} />
       <Route path="/mentor" element={<Mentors />} />
       <Route path="/mentor-profile" element={<MentorProfile />} />
-      <Route path="/profile" element={<MentorProfile />} />
+      <Route path="/profile" element={<Profile />} />
 
       {/* mentor link */}
       <Route path="/admin" element={<MentorLogin />} />
@@ -44,7 +44,7 @@ function App() {
       <Route path="/admin/schedule" element={<Schedule />} />
       <Route path="/admin/messages" element={<MessagesMentor />} />
       <Route path="/admin/talent" element={<TalentMentor />} />
-      <Route path="/admin/profile" element={<Profile />} />
+      <Route path="/admin/profile" element={<MentorProfile />} />
     </Routes>
   );
 }

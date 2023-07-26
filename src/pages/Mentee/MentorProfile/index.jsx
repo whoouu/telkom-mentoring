@@ -8,6 +8,7 @@ import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { clockBook, dayBook } from '../../../constants/bookingMentor';
 import useMentoringStore from '../../../stateManagement/store';
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 
 const MentorProfileCard = ({ children }) => {
   return <div className="rounded-lg shadow-lg px-5 py-3.5 bg-white">{children}</div>;
@@ -28,7 +29,7 @@ const ListCard = ({ children }) => {
   );
 };
 
-const CalendarCard = ({ day, date, slot, onClick, isActive }) => {
+export const CalendarCard = ({ day, date, slot, onClick, isActive }) => {
   return (
     <div
       onClick={onClick}
@@ -219,202 +220,30 @@ const MentorProfile = () => {
                 </MentorProfileCard>
 
                 <MentorProfileCard>
-                  <h2 className="font-semibold text-[18px] mb-3.5">Educations</h2>
-                  <div className="flex flex-col gap-5">
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
-
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
-
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
-                  </div>
-                </MentorProfileCard>
-
-                <MentorProfileCard>
-                  <h2 className="font-semibold text-[18px] mb-3.5">Experiences</h2>
-                  <div className="flex flex-col gap-5">
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
-
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
-
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
-                  </div>
-                </MentorProfileCard>
-
-                <MentorProfileCard>
-                  <h2 className="font-semibold text-[18px] mb-3.5">Citations</h2>
-                  <div className="flex flex-col gap-5">
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
-
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
-
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
+                  <h2 className="font-semibold text-[18px] mb-3.5">Interest</h2>
+                  <div className="flex gap-5">
+                    <p className="bg-purple-300 text-white p-3 rounded-lg w-fit h-fit text-[14px]">Research</p>
+                    <p className="bg-red-300 text-white p-3 rounded-lg w-fit h-fit text-[14px]">Machine Learning</p>
+                    <p className="bg-green-300 text-white p-3 rounded-lg w-fit h-fit text-[14px]">Data Science</p>
+                    <p className="bg-blue-300 text-white p-3 rounded-lg w-fit h-fit text-[14px]">
+                      Artificial Intelligence
+                    </p>
                   </div>
                 </MentorProfileCard>
               </div>
               {/* container right */}
               <div className="w-[100%]">
                 <div className="sticky top-[9rem] z-0">
-                  <div className="rounded-lg shadow-lg p-2 bg-white mb-5">
-                    <h2 className="text-[18px] font-bold">Jadwal Tersedia</h2>
-                    <hr className="mb-5 mt-3" />
-                    <div className="flex gap-5">
-                      {dayBook.map((data) => {
-                        return (
-                          <CalendarCard
-                            {...data}
-                            isActive={active === data.id}
-                            onClick={() => {
-                              setBooking((prevState) => ({ ...prevState, day: data.day, date: data.date }));
-                              setActive(data.id);
-                            }}
-                          />
-                        );
-                      })}
-                    </div>
-
-                    <h2 className="text-[18px] font-bold mt-5">Jam Tersedia</h2>
-                    <hr className="mb-5 mt-3" />
-                    <div className="flex gap-3">
-                      {clockBook.map((data) => {
-                        return (
-                          <div
-                            onClick={() => {
-                              setBooking((prevState) => ({ ...prevState, clock: data.clock }));
-                              setActiveClock(data.id);
-                            }}
-                            key={data.id}
-                            className={` ${
-                              activeClock === data.id ? 'bg-neutral-300' : ''
-                            } cursor-pointer border border-neutral-400 rounded-lg p-3 transition-all hover:border-black`}
-                          >
-                            <p>{data.clock}</p>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <button
-                      onClick={() => setIsOpen(true)}
-                      className="p-2.5 w-full rounded-lg bg-turqouise-500 text-white mt-5"
-                    >
-                      Book Jadwal 1:1 Mentoring
-                    </button>
-
-                    <button className="p-2.5 w-full rounded-lg border border-turqouise-500 text-turqouise-500 mt-5">
-                      <ChatOutlinedIcon className="text-turqouise-500 mr-2" fontSize="small" />
-                      Kirim Pesan
-                    </button>
-                  </div>
-
                   <div className="rounded-lg shadow-lg p-2 bg-white">
-                    <h2 className="text-[18px] font-bold mb-3.5">Review</h2>
-                    <div className="w-full">
-                      <Splide
-                        className="w-full"
-                        options={{ arrows: false, perPage: 1, pagination: false, width: '100%', height: 200 }}
-                      >
-                        <SplideSlide className="">
-                          <div className="rounded-lg flex flex-col justify-center bg-transparent">
-                            <div className="flex gap-3.5 mb-5">
-                              <div className="w-12 h-12 rounded-full overflow-hidden">
-                                <img
-                                  alt="test"
-                                  src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div>
-                                <h2 className="font-bold text-[14px]">Cipto</h2>
-                                <p className="font-light text-[12px]">Sistem Informasi 2021</p>
-                                <p className="text-[12px]">15 Maret 2023</p>
-                              </div>
-                            </div>
-                            <p className="font-normal text-[14px] text-justify">
-                              Pernah mentoring dengan pak Faqih ngebahas apa yang perlu disiapin buat jadi Data
-                              Scientist, dari sesi mentoring ini pikiran saya terbuka dan jadi lebih well prepared buat
-                              yang perlu disiapin selama kuliah
-                            </p>
-                          </div>
-                        </SplideSlide>
-                        <SplideSlide>
-                          <div className="rounded-lg flex flex-col justify-center bg-transparent">
-                            <div className="flex gap-3.5 mb-5">
-                              <div className="w-12 h-12 rounded-full overflow-hidden">
-                                <img
-                                  alt="test"
-                                  src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div>
-                                <h2 className="font-bold text-[14px]">Cipto</h2>
-                                <p className="font-light text-[12px]">Sistem Informasi 2021</p>
-                                <p className="text-[12px]">15 Maret 2023</p>
-                              </div>
-                            </div>
-                            <p className="font-normal text-[14px] text-justify">
-                              Pernah mentoring dengan pak Faqih ngebahas apa yang perlu disiapin buat jadi Data
-                              Scientist, dari sesi mentoring ini pikiran saya terbuka dan jadi lebih well prepared buat
-                              yang perlu disiapin selama kuliah
-                            </p>
-                          </div>
-                        </SplideSlide>
-                      </Splide>
+                    <h2 className="text-[18px] font-bold mb-3.5">Scoial Links</h2>
+                    <div className="w-full flex gap-5">
+                      <div className="bg-blue-100 p-3 rounded-lg underline">Haris Portofolio</div>
+                      <div className="bg-blue-100 p-3 rounded-lg underline">Haris Resume</div>
                     </div>
+                    <button className="border mt-5 text-gray-500 flex items-center gap-2 border-gray-200 p-3 rounded-lg w-fit">
+                      <AddOutlinedIcon />
+                      Add
+                    </button>
                   </div>
                 </div>
               </div>

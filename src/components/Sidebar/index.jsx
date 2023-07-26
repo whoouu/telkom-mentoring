@@ -2,16 +2,16 @@
 // import { Icon } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const Sidebar = ({ data }) => {
+const Sidebar = ({ data, name }) => {
   return (
     <div className="border pl-20 border-r h-full">
       <div className="flex flex-col gap-8 pr-10 pt-14">
         <div className="flex gap-3 items-center">
           <div className="rounded-full w-14 h-14 bg-contain overflow-hidden">
-            <img alt="test" src="default-person.avif" />
+            <img alt="test" src="/default-person.avif" />
           </div>
           <div>
-            <h1>Muhammad Harris Hassan</h1>
+            <h1>{name}</h1>
             <Link to={'/profile'} className="text-neutral-400 text-sm">
               Lihat Profile
             </Link>

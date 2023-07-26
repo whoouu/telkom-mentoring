@@ -279,29 +279,39 @@ const Profile = () => {
                 <MentorProfileCard>
                   <h2 className="font-semibold text-[18px] mb-3.5">Citations</h2>
                   <div className="flex flex-col gap-5">
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-blue-500">
+                        Univariate time series data forecasting of air pollution using LSTM neural network{' '}
+                      </h3>
+                      <p className="text-[14px] text-neutral-500">F. Hamami, IA Dahlan</p>
+                      <p className="text-[14px] text-neutral-500">
+                        2020 International Conference on Advancement in Data Science, E-learning, and...
+                      </p>
+                    </div>
 
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-blue-500">
+                        Univariate time series data forecasting of air pollution using LSTM neural network{' '}
+                      </h3>
+                      <p className="text-[14px] text-neutral-500">F. Hamami, IA Dahlan</p>
+                      <p className="text-[14px] text-neutral-500">
+                        2020 International Conference on Advancement in Data Science, E-learning, and...
+                      </p>
+                    </div>
 
-                    <ListCard>
-                      <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
-                      </div>
-                    </ListCard>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-blue-500">
+                        Univariate time series data forecasting of air pollution using LSTM neural network{' '}
+                      </h3>
+                      <p className="text-[14px] text-neutral-500">F. Hamami, IA Dahlan</p>
+                      <p className="text-[14px] text-neutral-500">
+                        2020 International Conference on Advancement in Data Science, E-learning, and...
+                      </p>
+                    </div>
+
+                    <button className="bg-neutral-800 text-white text-center p-3 rounded-lg w-fit mx-auto mt-5">
+                      Lihat semua
+                    </button>
                   </div>
                 </MentorProfileCard>
               </div>
