@@ -5,9 +5,8 @@ import { Box, MenuItem, Modal, OutlinedInput, Select } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { DatePicker } from '@mui/x-date-pickers';
 import { clockBook, dayBook } from '../../../constants/bookingMentor';
-import { CalendarCard } from '../../Mentee/MentorProfile';
-import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import { CalendarCard } from '../../Mentee/ProfileMentee';
 
 const RightSidebar = ({ isEdit, setOpen }) => {
   const [active, setActive] = useState(null);

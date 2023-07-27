@@ -19,6 +19,7 @@ import Messages from './Mentee/Messages';
 import MessagesMentor from './Mentor/Messages';
 import TalentMentor from './Mentor/Talent';
 import Profile from './Mentor/profile';
+import ProfileMentee from './Mentee/ProfileMentee';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
       <Route path="/notification" element={<Notification />} />
       <Route path="/mentor" element={<Mentors />} />
       <Route path="/mentor-profile" element={<MentorProfile />} />
-      <Route path="/profile" element={<MentorProfile />} />
+      <Route path="/profile" element={<ProfileMentee />} />
 
       {/* mentor link */}
       <Route path="/admin" element={<MentorLogin />} />
