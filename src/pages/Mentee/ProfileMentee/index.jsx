@@ -1,5 +1,7 @@
 import { Box, IconButton, Modal } from '@mui/material';
 import FullLayout from '../../../components/Layout/FullLayout';
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import { SplideSlide, Splide } from '@splidejs/react-splide';
 import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
@@ -73,7 +75,7 @@ const BookModal = ({ open, close, booking }) => {
           <Box className="px-3 py-5 bg-white rounded-lg w-[588px]">
             <h1 className="text-[24px] mb-3 font-semibold">Konfirmasi Waktu Sesi 1:1 Mentoring Kamu</h1>
             <p className="text-[16px]">
-              Sesi Mentoring dengan <span className="text-turqouise-500">Faqih Hamami</span>
+              Sesi Mentoring dengan <span className="text-turqouise-500">Mubeth Praditya</span>
             </p>
             <div className="flex gap-7 mt-5 flex-wrap w-full">
               <p className="flex items-center">

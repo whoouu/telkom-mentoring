@@ -40,7 +40,7 @@ const Header = ({ data }) => {
                 <img className="rounded-full object-cover w-12 h-12" alt="foto" src="/default-person.avif" />
                 <div className="flex-1">
                   <p className="mb-3">
-                    <span className="text-turqouise-600">Faqih Hammami</span> request untuk reschedule
+                    <span className="text-turqouise-600">Mubeth Praditya</span> request untuk reschedule
                   </p>
                   <button className="border rounded-lg p-3 border-neutral-500 text-neutral-500">Lihat Jadwal</button>
                 </div>
@@ -52,7 +52,7 @@ const Header = ({ data }) => {
                 <img className="rounded-full object-cover w-12 h-12" alt="foto" src="/default-person.avif" />
                 <div className="flex-1">
                   <p className="mb-3">
-                    <span className="text-turqouise-600">Faqih Hammami</span> request untuk reschedule
+                    <span className="text-turqouise-600">Mubeth Praditya</span> request untuk reschedule
                   </p>
                 </div>
                 <p>30 menit lalu</p>
@@ -61,7 +61,7 @@ const Header = ({ data }) => {
                 <img className="rounded-full object-cover w-12 h-12" alt="foto" src="/default-person.avif" />
                 <div className="flex-1">
                   <p className="mb-3">
-                    <span className="text-turqouise-600">Faqih Hammami</span> request untuk reschedule
+                    <span className="text-turqouise-600">Mubeth Praditya</span> request untuk reschedule
                   </p>
                 </div>
                 <p>30 menit lalu</p>
