@@ -187,7 +187,7 @@ const MentorProfile = () => {
               </div>
               <div className="mb-3 flex-1">
                 <h1 className="font-bold text-[28px]">Muhammad Harris Hassan</h1>
-                <p className="font-bold text-[18px]">Lecturer at Fakultas Rekayasa Industri</p>
+                <p className="font-bold text-[18px]">Student</p>
                 <p className="text-[12px]">Talks about #datascience. #machinelearning. #artificialintelligence.</p>
               </div>
               <div className="flex gap-7">
