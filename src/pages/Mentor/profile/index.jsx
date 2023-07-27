@@ -171,7 +171,7 @@ const Profile = () => {
   const [activeClock, setActiveClock] = useState(null);
 
   return (
-    <FullLayout>
+    <FullLayout isMentor={true}>
       <BookModal open={isOpen} close={setIsOpen} booking={booking} />
       <div className="bg-yellow-200 h-72 w-full relative">
         <div className="flex justify-center">
@@ -185,7 +185,7 @@ const Profile = () => {
                 />
               </div>
               <div className="mb-3 flex-1">
-                <h1 className="font-bold text-[28px]">Mubeth Praditya</h1>
+                <h1 className="font-bold text-[28px]">Muhammad Harris Hassan</h1>
                 <p className="font-bold text-[18px]">Lecturer at Fakultas Rekayasa Industri</p>
                 <p className="text-[12px]">Talks about #datascience. #machinelearning. #artificialintelligence.</p>
               </div>

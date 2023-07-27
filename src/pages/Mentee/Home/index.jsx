@@ -42,7 +42,7 @@ const NotificationCard = ({ totalMentoring, isOpenModal }) => {
       <div className="border rounded-lg p-5">
         <div className="flex justify-between">
           <p>
-            Sesi mentoring bareng <span className="text-red-300">Mubeth Praditya</span>
+            Sesi mentoring bareng <span className="text-red-300">Muhammad Harris Hassan</span>
           </p>
           <button className="text-neutral-400 text-[16px] font-light" onClick={() => setExpanded(!expanded)}>
             Details
@@ -110,7 +110,7 @@ const NotificationCard = ({ totalMentoring, isOpenModal }) => {
         <div className="border rounded-lg p-5 mt-5">
           <div className="flex justify-between">
             <p>
-              Request Reschedule Sesi mentoring bareng <span className="text-red-300">Mubeth Praditya</span>
+              Request Reschedule Sesi mentoring bareng <span className="text-red-300">Muhammad Harris Hassan</span>
             </p>
             <button className="text-neutral-400 text-[16px] font-light" onClick={() => setExpanded(!expanded)}>
               Details
@@ -187,7 +187,7 @@ const BookModal = ({ open, close }) => {
           <img src="../../../public/default-person.avif" alt="test" />
         </div>
         <p className="text-center my-3.5">
-          Sesi Mentoring dengan <span className="text-turqouise-500">Mubeth Praditya</span>
+          Sesi Mentoring dengan <span className="text-turqouise-500">Muhammad Harris Hassan</span>
         </p>
 
         <p className="text-neutral-500 text-[14px] font-normal text-center mb-4">Jadwal Baru</p>
@@ -255,7 +255,7 @@ const BookModal = ({ open, close }) => {
             <img src="../../../public/default-person.avif" alt="test" />
           </div>
           <p className="text-center my-3.5">
-            Sesi Mentoring dengan <span className="text-turqouise-500">Mubeth Praditya</span>
+            Sesi Mentoring dengan <span className="text-turqouise-500">Muhammad Harris Hassan</span>
           </p>
 
           <p className="text-neutral-500 text-[14px] font-normal text-center mb-4">Jadwal Baru</p>
@@ -343,7 +343,7 @@ const Home = () => {
         <div className="grid md:grid-cols-2 gap-3.5 mb-4">
           {/* card */}
           <MentorCard
-            name={'Mubeth Praditya'}
+            name={'Muhammad Harris Hassan'}
             faculty={'Fakultas Rekayasa Industri'}
             count={7}
             skills={['Machine Learning', 'Data Science']}
@@ -351,7 +351,7 @@ const Home = () => {
           />
 
           <MentorCard
-            name={'Mubeth Praditya'}
+            name={'Muhammad Harris Hassan'}
             faculty={'Fakultas Rekayasa Industri'}
             count={7}
             skills={['Machine Learning', 'Data Science']}
@@ -359,7 +359,7 @@ const Home = () => {
           />
 
           <MentorCard
-            name={'Mubeth Praditya'}
+            name={'Muhammad Harris Hassan'}
             faculty={'Fakultas Rekayasa Industri'}
             count={7}
             skills={['Machine Learning', 'Data Science']}
@@ -367,7 +367,7 @@ const Home = () => {
           />
 
           <MentorCard
-            name={'Mubeth Praditya'}
+            name={'Muhammad Harris Hassan'}
             faculty={'Fakultas Rekayasa Industri'}
             count={7}
             skills={['Machine Learning', 'Data Science']}
