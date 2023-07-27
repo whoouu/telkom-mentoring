@@ -171,7 +171,7 @@ const Profile = () => {
   const [activeClock, setActiveClock] = useState(null);
 
   return (
-    <FullLayout isMentor={true}>
+    <FullLayout>
       <BookModal open={isOpen} close={setIsOpen} booking={booking} />
       <div className="bg-yellow-200 h-72 w-full relative">
         <div className="flex justify-center">

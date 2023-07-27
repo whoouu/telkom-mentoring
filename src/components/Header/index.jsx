@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import useMentoringStore from '../../stateManagement/store';
+import { useState } from 'react';
 
 const Header = ({ data }) => {
+  const [isHide, setIsHide] = useState(false);
   const notificationCount = useMentoringStore((state) => state.notifCount);
   if (data) {
     return (
@@ -27,7 +29,45 @@ const Header = ({ data }) => {
           <p className="text-white bg-red-400 rounded-full w-5 h-5 text-center text-[12px] absolute left-3 bottom-3">
             {notificationCount}
           </p>
-          <NotificationsNoneOutlinedIcon />
+          <button onClick={() => setIsHide(!isHide)}>
+            <NotificationsNoneOutlinedIcon />
+          </button>
+
+          {isHide && (
+            <div className="bg-white border p-3 rounded-lg absolute top-10 right-0 w-[440px]">
+              <h1 className="font-semiold text-[24px]">Notifications</h1>
+              <div className="flex gap-4">
+                <img className="rounded-full object-cover w-12 h-12" alt="foto" src="/default-person.avif" />
+                <div className="flex-1">
+                  <p className="mb-3">
+                    <span className="text-turqouise-600">Faqih Hammami</span> request untuk reschedule
+                  </p>
+                  <button className="border rounded-lg p-3 border-neutral-500 text-neutral-500">Lihat Jadwal</button>
+                </div>
+                <p>30 menit lalu</p>
+              </div>
+
+              {/* without button */}
+              <div className="flex gap-4 mb-3">
+                <img className="rounded-full object-cover w-12 h-12" alt="foto" src="/default-person.avif" />
+                <div className="flex-1">
+                  <p className="mb-3">
+                    <span className="text-turqouise-600">Faqih Hammami</span> request untuk reschedule
+                  </p>
+                </div>
+                <p>30 menit lalu</p>
+              </div>
+              <div className="flex gap-4 mb-3">
+                <img className="rounded-full object-cover w-12 h-12" alt="foto" src="/default-person.avif" />
+                <div className="flex-1">
+                  <p className="mb-3">
+                    <span className="text-turqouise-600">Faqih Hammami</span> request untuk reschedule
+                  </p>
+                </div>
+                <p>30 menit lalu</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );

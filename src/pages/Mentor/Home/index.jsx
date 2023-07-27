@@ -9,7 +9,7 @@ import { CalendarCard } from '../../Mentee/MentorProfile';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 
-const RightSidebar = () => {
+const RightSidebar = ({ isEdit, setOpen }) => {
   const [active, setActive] = useState(null);
   const [activeClock, setActiveClock] = useState(null);
 
@@ -18,7 +18,18 @@ const RightSidebar = () => {
       {/* right side */}
       <div className="flex-2 pr-20 pl-10 pt-10">
         <div className="mb-3 border rounded-lg p-3 w-[366px]">
-          <h2 className="text-[18px] font-bold">Jadwal Tersedia</h2>
+          <div className="flex justify-between">
+            <h2 className="text-[18px] font-bold">Jadwal Tersedia</h2>
+            <button
+              className="text-turqouise-600"
+              onClick={() => {
+                isEdit(true);
+                setOpen(true);
+              }}
+            >
+              Edit
+            </button>
+          </div>
           <hr className="mb-5 mt-3" />
           <div className="flex gap-5">
             {dayBook.map((data) => {
@@ -58,7 +69,13 @@ const RightSidebar = () => {
             })}
           </div>
 
-          <button onClick={() => setIsOpen(true)} className="p-2.5 w-full rounded-lg bg-turqouise-500 text-white mt-5">
+          <button
+            onClick={() => {
+              isEdit(false);
+              setOpen(true);
+            }}
+            className="p-2.5 w-full rounded-lg bg-turqouise-500 text-white mt-5"
+          >
             <AddOutlinedIcon />
             Tambah Jadwal Tersedia
           </button>
@@ -143,7 +160,7 @@ const NotificationCard = ({ reschedule, isOpenModal }) => {
             onClick={() => isOpenModal(true)}
             className="bg-neutral-900 text-white rounded-lg py-3 px-5 mt-7 text-[16px]"
           >
-            Terima Jadwal Reschedule
+            Konfirmasi Jadwal
           </button>
           <button className="text-neutral-900 bg-white border border-neutral-900 rounded-lg py-3 px-5 mt-7 text-[16px]">
             Kirim Pesan
@@ -413,9 +430,66 @@ const BookModal = ({ open, close }) => {
   );
 };
 
+const CreateEditModal = ({ open, close, type }) => {
+  return (
+    <Modal open={open} onClose={() => close(false)} className="flex items-center justify-center">
+      <Box className="bg-white p-3 rounded-lg w-[640px]">
+        <h3 className="my-5 text-[22px] text-center font-bold">
+          {type ? 'Edit Jadwal Tersedia' : 'Buat Jadwal Tersedia'} Anda
+        </h3>
+        <hr className="my-3" />
+        <div className="mb-8">
+          <p className="mb-3">Pilih Tanggal Kosongmu</p>
+          <DatePicker className="w-full" />
+        </div>
+
+        <div className="mb-8">
+          <p className="mb-3">Pilih Waktu Kosongmu</p>
+          <div className="flex gap-5 mb-5 items-center">
+            <img alt="icon" src="/public/clock-icon.svg" />
+            <Select label="end" className="w-32">
+              <MenuItem value={'8.00'}>8.00pm</MenuItem>
+              <MenuItem value={'8.10'}>8.10pm</MenuItem>
+              <MenuItem value={'8.20'}>8.20pm</MenuItem>
+              <MenuItem value={'9.10'}>9.10pm</MenuItem>
+              <MenuItem value={'9.20'}>9.20pm</MenuItem>
+            </Select>
+            <p>-</p>
+            <Select label="start" className="w-32">
+              <MenuItem value={'8.00'}>8.00pm</MenuItem>
+              <MenuItem value={'8.10'}>8.10pm</MenuItem>
+              <MenuItem value={'8.20'}>8.20pm</MenuItem>
+              <MenuItem value={'9.10'}>9.10pm</MenuItem>
+              <MenuItem value={'9.20'}>9.20pm</MenuItem>
+            </Select>
+          </div>
+
+          <div>
+            <p className="mb-3">Referensi</p>
+            <Select label="start" className="w-32">
+              <MenuItem value={'week'}>Weekly</MenuItem>
+              <MenuItem value={'month'}>Monthly</MenuItem>
+            </Select>
+          </div>
+        </div>
+
+        <div className="flex flex-col mt-5 gap-3">
+          <button onClick={() => close(false)} className="bg-turqouise-500 text-white w-full rounded-lg p-3">
+            Konfirmasi
+          </button>
+        </div>
+      </Box>
+    </Modal>
+  );
+};
+
 const HomeMentor = () => {
   const [booking, setBooking] = useState(null);
   const [openModal, setOpenModal] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
+
+  // create and edit
+  const [createModal, setCreateModal] = useState(false);
 
   useEffect(() => {
     if (window !== null) {
@@ -425,8 +499,9 @@ const HomeMentor = () => {
   }, [window]);
 
   return (
-    <Layout isMentor={true} rightSidebar={<RightSidebar />}>
+    <Layout isMentor={true} rightSidebar={<RightSidebar setOpen={setCreateModal} isEdit={setIsEdit} />}>
       {/* left side */}
+      <CreateEditModal open={createModal} close={setCreateModal} type={isEdit} />
       <BookModal open={openModal} close={setOpenModal} />
       <div className="flex-1 overflow-auto py-8 px-14">
         <h1 className="text-[28px] font-bold mb-2">Welcome</h1>
