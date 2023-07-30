@@ -38,7 +38,7 @@ const TemplateProfile = ({ name, faculty, bachelor, scrollY, images, interest, a
                   {dataMentor.faculty.length == 0 ? (
                     <Skeleton width={250} height={30} />
                   ) : (
-                    <p className="text-[18px] font-normal">Student at {dataMentor.faculty}</p>
+                    <p className="text-[18px] font-normal">Lecturer at {dataMentor.faculty}</p>
                   )}
                 </div>
               </div>
@@ -144,7 +144,7 @@ const TemplateProfile = ({ name, faculty, bachelor, scrollY, images, interest, a
 
     if (dataMentor.progress == 50) {
       return (
-        <div className="bg-white p-3 rounded-lg absolute top-52">
+        <div className="bg-white p-3 rounded-lg absolute top-52 w-full">
           <h1 className="font-semibold text-[18px] mb-2.5">Tentang</h1>
           {dataMentor.about.length == 0 ? (
             <>
