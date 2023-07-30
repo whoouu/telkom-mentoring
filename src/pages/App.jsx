@@ -20,6 +20,7 @@ import MessagesMentor from './Mentor/Messages';
 import TalentMentor from './Mentor/Talent';
 import Profile from './Mentor/profile';
 import ProfileMentee from './Mentee/ProfileMentee';
+import SearchPage from "./Mentee/Search/index.jsx";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Route path="/mentor" element={<Mentors />} />
       <Route path="/mentor-profile" element={<MentorProfile />} />
       <Route path="/profile" element={<ProfileMentee />} />
+      <Route path={'/search'} element={<SearchPage />} />
 
       {/* mentor link */}
       <Route path="/admin" element={<MentorLogin />} />

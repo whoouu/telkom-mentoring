@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { OutlinedInput } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import useMentoringStore from '../../stateManagement/store';
@@ -8,7 +8,17 @@ import { useState } from 'react';
 
 const Header = ({ data }) => {
   const [isHide, setIsHide] = useState(false);
+  const navigate = useNavigate();
+  const [searchKeyword, setSearchKeyword] = useState("");
   const notificationCount = useMentoringStore((state) => state.notifCount);
+
+  const handleSearch = (e) => {
+    console.log("key:", e.key)
+    if(e.key === "Enter"){
+      return navigate(`/search?keyword=${searchKeyword}`)
+    }
+
+  }
   if (data) {
     return (
       <div className="bg-white border-b border-neutral-300 w-full py-5 px-20 flex items-center justify-between sticky top-0 z-10">
@@ -23,7 +33,7 @@ const Header = ({ data }) => {
               );
             })}
           </div>
-          <OutlinedInput type="text" endAdornment={<SearchIcon />} />
+          <OutlinedInput type="text" onChange={(e) => setSearchKeyword(e.target.value)} onKeyDown={handleSearch} endAdornment={<SearchIcon />} />
         </div>
         <div className="relative">
           <p className="text-white bg-red-400 rounded-full w-5 h-5 text-center text-[12px] absolute left-3 bottom-3">
