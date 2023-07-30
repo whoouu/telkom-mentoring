@@ -67,17 +67,6 @@ const RightSidebar = ({ isEdit, setOpen }) => {
               );
             })}
           </div>
-
-          <button
-            onClick={() => {
-              isEdit(false);
-              setOpen(true);
-            }}
-            className="p-2.5 w-full rounded-lg bg-turqouise-500 text-white mt-5"
-          >
-            <AddOutlinedIcon />
-            Tambah Jadwal Tersedia
-          </button>
         </div>
         <div className="border rounded-lg p-5 w-[366px]">
           <h2 className="text-[20px] mb-5">Review</h2>
@@ -99,14 +88,14 @@ const RightSidebar = ({ isEdit, setOpen }) => {
   );
 };
 
-const NotificationCard = ({ reschedule, isOpenModal }) => {
+const NotificationCard = ({ reschedule, isOpenModal, name }) => {
   const [expanded, setExpanded] = useState(false);
   if (reschedule) {
     return (
       <div className="border rounded-lg p-5 mt-5">
         <div className="flex justify-between">
           <p>
-            Request Reschedule Sesi mentoring bareng <span className="text-red-300">Mubeth Praditya</span>
+            Request Reschedule Sesi mentoring bareng <span className="text-red-300">{name}</span>
           </p>
           <button className="text-neutral-400 text-[16px] font-light" onClick={() => setExpanded(!expanded)}>
             Details
@@ -122,7 +111,7 @@ const NotificationCard = ({ reschedule, isOpenModal }) => {
                 <img alt="test" src="/default-person.avif" />
               </div>
               <div className="flex flex-col justify-center w-full">
-                <p className="inline text-[18px]">Anakin Skywalker</p>
+                <p className="inline text-[18px]">{name}</p>
                 <p className="inline text-[14px] text-neutral-400">Online</p>
               </div>
             </div>
@@ -172,7 +161,7 @@ const NotificationCard = ({ reschedule, isOpenModal }) => {
     <div className="border rounded-lg p-5">
       <div className="flex justify-between">
         <p>
-          Sesi mentoring bareng <span className="text-red-300">Mubeth Praditya</span>
+          Sesi mentoring bareng <span className="text-red-300">{name}</span>
         </p>
         <button className="text-neutral-400 text-[16px] font-light" onClick={() => setExpanded(!expanded)}>
           Details
@@ -509,9 +498,27 @@ const HomeMentor = () => {
           <span className="text-turqouise-500">Jadwal Tersedia</span>
         </p>
 
+        <div className="rounded-lg border p-5 border-neutral-400 my-4 w-full mb-10">
+          <b className="text-[20px]">Tambah Jadwal Tersedia Anda</b>
+          <hr className="my-3" />
+          <p className="mb-4">
+            Disini anda bisa menambah <span className="text-turqouise-500">Jadwal Tersedia</span> yang nantinya bisa
+            untuk memberitahukan mentee jadwal kosong anda .
+          </p>
+          <button
+            onClick={() => {
+              setOpenModal(true);
+            }}
+            className="p-2.5 w-full rounded-lg bg-turqouise-500 text-white mt-5"
+          >
+            <AddOutlinedIcon />
+            Tambah Jadwal Tersedia
+          </button>
+        </div>
+
         <div className="flex flex-col gap-10 mb-10">
-          <NotificationCard />
-          <NotificationCard reschedule={true} isOpenModal={setOpenModal} />
+          <NotificationCard name={'Anakin skywalker'} />
+          <NotificationCard name={'luke skywalker '} reschedule={true} isOpenModal={setOpenModal} />
         </div>
 
         <div className="relative w-full">

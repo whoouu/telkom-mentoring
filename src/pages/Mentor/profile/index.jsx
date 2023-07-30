@@ -363,11 +363,6 @@ const Profile = () => {
                     >
                       Book Jadwal 1:1 Mentoring
                     </button>
-
-                    <button className="p-2.5 w-full rounded-lg border border-turqouise-500 text-turqouise-500 mt-5">
-                      <ChatOutlinedIcon className="text-turqouise-500 mr-2" fontSize="small" />
-                      Kirim Pesan
-                    </button>
                   </div>
 
                   <div className="rounded-lg shadow-lg p-2 bg-white">

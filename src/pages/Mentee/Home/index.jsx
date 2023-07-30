@@ -302,6 +302,33 @@ const BookModal = ({ open, close }) => {
   );
 };
 
+const nameMentor = [
+  {
+    id: 1,
+    name: 'Peter Sutton',
+    image:
+      'https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+  },
+  {
+    id: 2,
+    name: 'Felix Lane',
+    image:
+      'https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80',
+  },
+  {
+    id: 3,
+    name: 'Mathew Owens',
+    image:
+      'https://images.unsplash.com/photo-1496302662116-35cc4f36df92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80',
+  },
+  {
+    id: 4,
+    name: 'Harvey Day',
+    image:
+      'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80',
+  },
+];
+
 const Home = () => {
   const [booking, setBooking] = useState(null);
   const [openModal, setOpenModal] = useState(false);
@@ -342,37 +369,19 @@ const Home = () => {
         {/* card container */}
         <div className="grid md:grid-cols-2 gap-3.5 mb-4">
           {/* card */}
-          <MentorCard
-            name={'Muhammad Harris Hassan'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-
-          <MentorCard
-            name={'Muhammad Harris Hassan'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-
-          <MentorCard
-            name={'Muhammad Harris Hassan'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
-
-          <MentorCard
-            name={'Muhammad Harris Hassan'}
-            faculty={'Fakultas Rekayasa Industri'}
-            count={7}
-            skills={['Machine Learning', 'Data Science']}
-            availableAt={'4 Mei 23, 8.30 PM'}
-          />
+          {nameMentor.map((data) => {
+            return (
+              <MentorCard
+                key={data.id}
+                name={data.name}
+                image={data.image}
+                faculty={'Fakultas Rekayasa Industri'}
+                count={7}
+                skills={['Machine Learning', 'Data Science']}
+                availableAt={'4 Mei 23, 8.30 PM'}
+              />
+            );
+          })}
         </div>
 
         <h2 className="text-[18px] font-semibold mb-4">Temukan mentor seru berdasarkan topik</h2>

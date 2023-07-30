@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const MentorCard = ({ name, faculty, count, skills, availableAt }) => {
+const MentorCard = ({ name, image, faculty, count, skills, availableAt }) => {
   return (
     <div className="rounded-lg border p-3 w-full">
       <div className="overflow-hidden w-full rounded-lg">
-        <img alt="test" src="/thumbnail.avif" />
+        <img alt="test" src={image ? image : '/thumbnail.avif'} />
       </div>
       <p className="mt-3 mb-1">{name}</p>
       {/* description */}
