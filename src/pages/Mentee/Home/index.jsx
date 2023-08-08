@@ -42,7 +42,7 @@ const NotificationCard = ({ totalMentoring, isOpenModal }) => {
       <div className="border rounded-lg p-5">
         <div className="flex justify-between">
           <p>
-            Sesi mentoring bareng <span className="text-red-300">Muhammad Harris Hassan</span>
+            Sesi mentoring bareng <span className="text-red-300">Mubeth Praditya</span>
           </p>
           <button className="text-neutral-400 text-[16px] font-light" onClick={() => setExpanded(!expanded)}>
             Details
@@ -68,7 +68,7 @@ const NotificationCard = ({ totalMentoring, isOpenModal }) => {
                 <img alt="test" src="/default-person.avif" />
               </div>
               <div className="flex flex-col justify-center w-full">
-                <p className="inline text-[18px]">Anakin Skywalker</p>
+                <p className="inline text-[18px]">Mubeth Praditya</p>
                 <p className="inline text-[14px] text-neutral-400">Online</p>
               </div>
             </div>
@@ -110,7 +110,7 @@ const NotificationCard = ({ totalMentoring, isOpenModal }) => {
         <div className="border rounded-lg p-5 mt-5">
           <div className="flex justify-between">
             <p>
-              Request Reschedule Sesi mentoring bareng <span className="text-red-300">Muhammad Harris Hassan</span>
+              Request Reschedule Sesi mentoring bareng <span className="text-red-300">Mubeth Praditya</span>
             </p>
             <button className="text-neutral-400 text-[16px] font-light" onClick={() => setExpanded(!expanded)}>
               Details
@@ -126,7 +126,7 @@ const NotificationCard = ({ totalMentoring, isOpenModal }) => {
                   <img alt="test" src="/default-person.avif" />
                 </div>
                 <div className="flex flex-col justify-center w-full">
-                  <p className="inline text-[18px]">Anakin Skywalker</p>
+                  <p className="inline text-[18px]">Mubeth Praditya</p>
                   <p className="inline text-[14px] text-neutral-400">Online</p>
                 </div>
               </div>

@@ -1,12 +1,30 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 import Layout from '../../../components/Layout/Layout';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { Box, MenuItem, Modal, OutlinedInput, Select } from '@mui/material';
+import { Box, MenuItem, Modal, OutlinedInput, Select, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { DatePicker } from '@mui/x-date-pickers';
 import { clockBook, dayBook } from '../../../constants/bookingMentor';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import { CalendarCard } from '../../Mentee/ProfileMentee';
+import LinearProgress from '@mui/material/LinearProgress';
+
+// icon
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+
+function LinearProgressWithLabel(props) {
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ width: '100%', mr: 1 }}>
+        <LinearProgress variant="determinate" color="secondary" {...props} />
+      </Box>
+      <Box sx={{ minWidth: 35 }}>
+        <Typography variant="body2" color="text.secondary">{`${Math.round(props.value)}%`}</Typography>
+      </Box>
+    </Box>
+  );
+}
 
 const RightSidebar = ({ isEdit, setOpen }) => {
   const [active, setActive] = useState(null);
@@ -68,8 +86,14 @@ const RightSidebar = ({ isEdit, setOpen }) => {
             })}
           </div>
         </div>
-        <div className="border rounded-lg p-5 w-[366px]">
-          <h2 className="text-[20px] mb-5">Review</h2>
+        <div className="border rounded-lg p-5 w-[366px] mb-3">
+          <div className="flex justify-between">
+            <h2 className="text-[20px] font-semibold mb-5">Review</h2>
+            <div className="flex gap-5">
+              <ChevronLeftIcon />
+              <ChevronRightIcon />
+            </div>
+          </div>
           <div className="flex gap-2.5 mb-5">
             <img alt="img" src="/default-person.avif" className="rounded-full w-16 h-16 object-cover" />
             <div className="flex-1">
@@ -82,6 +106,17 @@ const RightSidebar = ({ isEdit, setOpen }) => {
             Pernah mentoring dengan pak Faqih ngebahas apa yang perlu disiapin buat jadi data scientist, dari sesi
             mentoring ini pikiran saya terbuka dan jadi lebih well prepared buat yang perlu disiapin selama kuliah.
           </p>
+        </div>
+
+        <div className="border rounded-lg p-5 w-[366px]">
+          <h2 className="text-[20px] font-semibold mb-5">Complete Your Session</h2>
+          <div className="flex gap-8">
+            <img alt="logo" src="/public/icon-achieve.svg" />
+            <div className="flex-1 flex flex-col gap-4">
+              <p className="text-gray-400">Complete your daily mentoring</p>
+              <LinearProgressWithLabel color="info" value={0} />
+            </div>
+          </div>
         </div>
       </div>
     </>
@@ -217,124 +252,125 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
   );
 };
 
-const BookModal = ({ open, close }) => {
-  const [openModal, setOpenModal] = useState(false);
+const FinishModal = ({ setClose, setClosePrevModal }) => {
+  return (
+    <Box className="bg-white rounded-lg px-5 py-7 w-[594px]">
+      <img className="mx-auto my-5" alt="success-icon" src="/public/success-icon.svg" />
+      <h3 className="text-center font-bold text-[22px]">Berhasil Membuat Jadwal 1:1 Mentoring!</h3>
+      <div className="w-28 h-28 mx-auto rounded-full overflow-hidden">
+        <img src="../../../public/default-person.avif" alt="test" />
+      </div>
+      <p className="text-center my-3.5">
+        Sesi Mentoring dengan <span className="text-red-500">Anakin Skywalker</span>
+      </p>
 
-  const FinishModal = ({ setClose, setClosePrevModal }) => {
-    return (
-      <Box className="bg-white rounded-lg px-5 py-7 w-[594px]">
-        <img className="mx-auto my-5" alt="success-icon" src="/public/success-icon.svg" />
-        <h3 className="text-center font-bold text-[22px]">Berhasil Membuat Jadwal 1:1 Mentoring!</h3>
-        <div className="w-28 h-28 mx-auto rounded-full overflow-hidden">
-          <img src="../../../public/default-person.avif" alt="test" />
-        </div>
-        <p className="text-center my-3.5">
-          Sesi Mentoring dengan <span className="text-red-500">Anakin Skywalker</span>
+      <p className="text-center text-gray-400">Jadwal Baru</p>
+
+      <div className="flex gap-5 mx-auto mt-5 justify-between flex-wrap w-fit">
+        <p className="text-[14px] flex">
+          <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
+          Sabtu, Mei 28
         </p>
+        <p className="text-[14px] flex">
+          <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
+        </p>
+      </div>
 
-        <p className="text-center text-gray-400">Jadwal Baru</p>
+      <button
+        onClick={() => {
+          setClose(false);
+          setClosePrevModal(false);
+        }}
+        className="bg-neutral-900 text-white w-full rounded-lg p-3 mt-5"
+      >
+        Kembali
+      </button>
+    </Box>
+  );
+};
 
-        <div className="flex gap-5 mx-auto mt-5 justify-between flex-wrap w-fit">
-          <p className="text-[14px] flex">
-            <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
-            Sabtu, Mei 28
-          </p>
-          <p className="text-[14px] flex">
-            <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
-          </p>
+const ConfirmBookModal = ({ setClose, setClosePrevModal }) => {
+  const [openModal, setOpenModal] = useState(false);
+  return (
+    <Box className="bg-white rounded-lg px-5 py-7 w-[594px]">
+      {openModal && (
+        <Modal
+          open={openModal}
+          className="flex items-center justify-center"
+          onClose={() => {
+            close(false);
+            setOpenModal(false);
+          }}
+        >
+          <FinishModal setClosePrevModal={setClosePrevModal} setClose={close} />
+        </Modal>
+      )}
+      <h1 className="mb-3 font-bold text-[24px] text-center">Reschedule Jadwal Sesi 1:1 Mentoring Berhasil!</h1>
+      <hr className="mb-5" />
+      <div className="w-28 h-28 mx-auto rounded-full overflow-hidden">
+        <img src="../../../public/default-person.avif" alt="test" />
+      </div>
+      <p className="text-center my-3.5">
+        Sesi Mentoring dengan <span className="text-red-500">Anakin Skywalker</span>
+      </p>
+      <div className="flex gap-3">
+        <div className="rounded-lg border border-neutral-400 p-3 w-full">
+          <p className="text-red-500 font-semibold text-[14px] text-center mb-2.5">Jadwal Lama</p>
+          <div className="flex gap-2 justify-between flex-wrap w-full">
+            <p className="text-[14px] flex">
+              <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
+              Sabtu, Mei 28
+            </p>
+            <p className="text-[14px] flex">
+              <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
+            </p>
+          </div>
         </div>
+        <div className="rounded-lg border border-neutral-400 p-3 w-full">
+          <p className="text-turqouise-500 font-semibold text-[14px] text-center mb-2.5">Jadwal Baru</p>
+          <div className="flex gap-2 justify-between flex-wrap w-full">
+            <p className="text-[14px] flex">
+              <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
+              Rabu, Mei 28
+            </p>
+            <p className="text-[14px] flex">
+              <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="my-4">
+        <p className="text-gray-400">pesan</p>
+        <p>Hi Name. Boleh reschedule ke jam ini nggak soalnya saya ada acara mendadak </p>
+      </div>
+
+      <div className="flex flex-col mt-5 gap-3">
+        <button
+          onClick={() => {
+            setOpenModal(true);
+          }}
+          className="bg-neutral-900 text-white w-full rounded-lg p-3"
+        >
+          Reschedule
+        </button>
 
         <button
           onClick={() => {
             setClose(false);
             setClosePrevModal(false);
           }}
-          className="bg-neutral-900 text-white w-full rounded-lg p-3 mt-5"
+          className="text-neutral-900 bg-white border border-neutral-900 w-full rounded-lg p-3"
         >
-          Kembali
+          Kirim Pesan Langsung
         </button>
-      </Box>
-    );
-  };
-  const ConfirmBookModal = ({ setClose, setClosePrevModal }) => {
-    const [openModal, setOpenModal] = useState(false);
-    return (
-      <Box className="bg-white rounded-lg px-5 py-7 w-[594px]">
-        {openModal && (
-          <Modal
-            open={openModal}
-            className="flex items-center justify-center"
-            onClose={() => {
-              close(false);
-              setOpenModal(false);
-            }}
-          >
-            <FinishModal setClosePrevModal={setClosePrevModal} setClose={close} />
-          </Modal>
-        )}
-        <h1 className="mb-3 font-bold text-[24px] text-center">Reschedule Jadwal Sesi 1:1 Mentoring Berhasil!</h1>
-        <hr className="mb-5" />
-        <div className="w-28 h-28 mx-auto rounded-full overflow-hidden">
-          <img src="../../../public/default-person.avif" alt="test" />
-        </div>
-        <p className="text-center my-3.5">
-          Sesi Mentoring dengan <span className="text-red-500">Anakin Skywalker</span>
-        </p>
-        <div className="flex gap-3">
-          <div className="rounded-lg border border-neutral-400 p-3 w-full">
-            <p className="text-red-500 font-semibold text-[14px] text-center mb-2.5">Jadwal Lama</p>
-            <div className="flex gap-2 justify-between flex-wrap w-full">
-              <p className="text-[14px] flex">
-                <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
-                Sabtu, Mei 28
-              </p>
-              <p className="text-[14px] flex">
-                <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
-              </p>
-            </div>
-          </div>
-          <div className="rounded-lg border border-neutral-400 p-3 w-full">
-            <p className="text-turqouise-500 font-semibold text-[14px] text-center mb-2.5">Jadwal Baru</p>
-            <div className="flex gap-2 justify-between flex-wrap w-full">
-              <p className="text-[14px] flex">
-                <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
-                Rabu, Mei 28
-              </p>
-              <p className="text-[14px] flex">
-                <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
-              </p>
-            </div>
-          </div>
-        </div>
+      </div>
+    </Box>
+  );
+};
 
-        <div className="my-4">
-          <p className="text-gray-400">pesan</p>
-          <p>Hi Name. Boleh reschedule ke jam ini nggak soalnya saya ada acara mendadak </p>
-        </div>
-
-        <div className="flex flex-col mt-5 gap-3">
-          <button
-            onClick={() => {
-              setOpenModal(true);
-            }}
-            className="bg-neutral-900 text-white w-full rounded-lg p-3"
-          >
-            Reschedule
-          </button>
-
-          <button
-            onClick={() => {
-              setClose(false);
-              setClosePrevModal(false);
-            }}
-            className="text-neutral-900 bg-white border border-neutral-900 w-full rounded-lg p-3"
-          >
-            Kirim Pesan Langsung
-          </button>
-        </div>
-      </Box>
-    );
-  };
+const BookModal = ({ open, close }) => {
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <Modal open={open} onClose={() => close(false)} className="flex items-center justify-center">
@@ -419,54 +455,74 @@ const BookModal = ({ open, close }) => {
 };
 
 const CreateEditModal = ({ open, close, type }) => {
+  // const [openModal, setOpenModal] = useState(false);
   return (
     <Modal open={open} onClose={() => close(false)} className="flex items-center justify-center">
-      <Box className="bg-white p-3 rounded-lg w-[640px]">
-        <h3 className="my-5 text-[22px] text-center font-bold">
-          {type ? 'Edit Jadwal Tersedia' : 'Buat Jadwal Tersedia'} Anda
-        </h3>
-        <hr className="my-3" />
-        <div className="mb-8">
-          <p className="mb-3">Pilih Tanggal Kosongmu</p>
-          <DatePicker className="w-full" />
-        </div>
-
-        <div className="mb-8">
-          <p className="mb-3">Pilih Waktu Kosongmu</p>
-          <div className="flex gap-5 mb-5 items-center">
-            <img alt="icon" src="/public/clock-icon.svg" />
-            <Select label="end" className="w-32">
-              <MenuItem value={'8.00'}>8.00pm</MenuItem>
-              <MenuItem value={'8.10'}>8.10pm</MenuItem>
-              <MenuItem value={'8.20'}>8.20pm</MenuItem>
-              <MenuItem value={'9.10'}>9.10pm</MenuItem>
-              <MenuItem value={'9.20'}>9.20pm</MenuItem>
-            </Select>
-            <p>-</p>
-            <Select label="start" className="w-32">
-              <MenuItem value={'8.00'}>8.00pm</MenuItem>
-              <MenuItem value={'8.10'}>8.10pm</MenuItem>
-              <MenuItem value={'8.20'}>8.20pm</MenuItem>
-              <MenuItem value={'9.10'}>9.10pm</MenuItem>
-              <MenuItem value={'9.20'}>9.20pm</MenuItem>
-            </Select>
+      <>
+        {/* {openModal && (
+          <Modal
+            open={openModal}
+            className="flex items-center justify-center"
+            onClose={() => {
+              close(false);
+              setOpenModal(false);
+            }}
+          >
+            <ConfirmBookModal setClosePrevModal={setOpenModal} setClose={close} />
+          </Modal>
+        )} */}
+        <Box className="bg-white p-3 rounded-lg w-[640px]">
+          <h3 className="my-5 text-[22px] text-center font-bold">
+            {type ? 'Edit Jadwal Tersedia' : 'Buat Jadwal Tersedia'} Anda
+          </h3>
+          <hr className="my-3" />
+          <div className="mb-8">
+            <p className="mb-3">Pilih Tanggal Kosongmu</p>
+            <DatePicker className="w-full" />
           </div>
 
-          <div>
-            <p className="mb-3">Referensi</p>
-            <Select label="start" className="w-32">
-              <MenuItem value={'week'}>Weekly</MenuItem>
-              <MenuItem value={'month'}>Monthly</MenuItem>
-            </Select>
-          </div>
-        </div>
+          <div className="mb-8">
+            <p className="mb-3">Pilih Waktu Kosongmu</p>
+            <div className="flex gap-5 mb-5 items-center">
+              <img alt="icon" src="/public/clock-icon.svg" />
+              <Select label="end" className="w-32">
+                <MenuItem value={'8.00'}>8.00pm</MenuItem>
+                <MenuItem value={'8.10'}>8.10pm</MenuItem>
+                <MenuItem value={'8.20'}>8.20pm</MenuItem>
+                <MenuItem value={'9.10'}>9.10pm</MenuItem>
+                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+              </Select>
+              <p>-</p>
+              <Select label="start" className="w-32">
+                <MenuItem value={'8.00'}>8.00pm</MenuItem>
+                <MenuItem value={'8.10'}>8.10pm</MenuItem>
+                <MenuItem value={'8.20'}>8.20pm</MenuItem>
+                <MenuItem value={'9.10'}>9.10pm</MenuItem>
+                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+              </Select>
+            </div>
 
-        <div className="flex flex-col mt-5 gap-3">
-          <button onClick={() => close(false)} className="bg-turqouise-500 text-white w-full rounded-lg p-3">
-            Konfirmasi
-          </button>
-        </div>
-      </Box>
+            <div>
+              <p className="mb-3">Referensi</p>
+              <Select label="start" className="w-1/2">
+                <MenuItem value={'week'}>Weekly</MenuItem>
+                <MenuItem value={'month'}>Monthly</MenuItem>
+              </Select>
+            </div>
+
+            <div className="inline-flex items-center mt-5 gap-4">
+              <img className="w-6 h-fit" alt="test" src="/g-meet-icon.png" />
+              <button className="bg-blue-400 rounded-lg p-3 text-white">Tambahkan Link Google Meet</button>
+            </div>
+          </div>
+
+          <div className="flex flex-col mt-5 gap-3">
+            <button onClick={() => setOpenModal(true)} className="bg-turqouise-500 text-white w-full rounded-lg p-3">
+              Konfirmasi
+            </button>
+          </div>
+        </Box>
+      </>
     </Modal>
   );
 };
@@ -507,7 +563,7 @@ const HomeMentor = () => {
           </p>
           <button
             onClick={() => {
-              setOpenModal(true);
+              setCreateModal(true);
             }}
             className="p-2.5 w-full rounded-lg bg-turqouise-500 text-white mt-5"
           >

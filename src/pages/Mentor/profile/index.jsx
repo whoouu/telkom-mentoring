@@ -1,13 +1,13 @@
-import { Box, IconButton, Modal } from '@mui/material';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/prop-types */
+import { Box, IconButton, MenuItem, Modal, Select } from '@mui/material';
 import FullLayout from '../../../components/Layout/FullLayout';
-import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import { DatePicker } from '@mui/x-date-pickers';
 import { SplideSlide, Splide } from '@splidejs/react-splide';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
-import CopyToClipboard from 'react-copy-to-clipboard';
 import { clockBook, dayBook } from '../../../constants/bookingMentor';
-import useMentoringStore from '../../../stateManagement/store';
 
 const MentorProfileCard = ({ children }) => {
   return <div className="rounded-lg shadow-lg px-5 py-3.5 bg-white">{children}</div>;
@@ -30,6 +30,7 @@ const ListCard = ({ children }) => {
 
 const CalendarCard = ({ day, date, slot, onClick, isActive }) => {
   return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
       onClick={onClick}
       className={`border border-neutral-400 ${
@@ -43,136 +44,88 @@ const CalendarCard = ({ day, date, slot, onClick, isActive }) => {
   );
 };
 
-const BookModal = ({ open, close, booking }) => {
-  const topicRef = useRef();
-  const [isCopied, setIsCopied] = useState(false);
-  const [valText, setValText] = useState('');
-  const [step, setStep] = useState(1);
-  const notificationCount = useMentoringStore((state) => state.increaseNotif);
+const CreateEditModal = ({ open, close, type }) => {
+  // const [openModal, setOpenModal] = useState(false);
+  return (
+    <Modal open={open} onClose={() => close(false)} className="flex items-center justify-center">
+      <>
+        {/* {openModal && (
+          <Modal
+            open={openModal}
+            className="flex items-center justify-center"
+            onClose={() => {
+              close(false);
+              setOpenModal(false);
+            }}
+          >
+            <ConfirmBookModal setClosePrevModal={setOpenModal} setClose={close} />
+          </Modal>
+        )} */}
+        <Box className="bg-white p-3 rounded-lg w-[640px]">
+          <h3 className="my-5 text-[22px] text-center font-bold">
+            {type ? 'Edit Jadwal Tersedia' : 'Buat Jadwal Tersedia'} Anda
+          </h3>
+          <hr className="my-3" />
+          <div className="mb-8">
+            <p className="mb-3">Pilih Tanggal Kosongmu</p>
+            <DatePicker className="w-full" />
+          </div>
 
-  const nextStep = () => {
-    setStep(step + 1);
-    notificationCount();
-  };
-
-  const closeModal = () => {
-    close(false);
-    setStep(1);
-    setValText('');
-  };
-
-  useEffect(() => {
-    if (step > 1) {
-      window.sessionStorage.setItem('booking', JSON.stringify(booking));
-    }
-  }, [step]);
-
-  switch (step) {
-    case 1:
-      return (
-        <Modal open={open} onClose={() => close(false)} className="flex items-center justify-center">
-          <Box className="px-3 py-5 bg-white rounded-lg w-[588px]">
-            <h1 className="text-[24px] mb-3 font-semibold">Konfirmasi Waktu Sesi 1:1 Mentoring Kamu</h1>
-            <p className="text-[16px]">
-              Sesi Mentoring dengan <span className="text-turqouise-500">Faqih Hamami</span>
-            </p>
-            <div className="flex gap-7 mt-5 flex-wrap w-full">
-              <p className="flex items-center">
-                <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
-                {booking.day}, {booking.date}
-              </p>
-              <p className="flex items-center">
-                <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />
-                {booking.clock}
-              </p>
-            </div>
-            <hr className="mt-3 mb-5" />
-            <p className="mb-3">Buat pertanyaan / Topik untuk sesi mentoring ini</p>
-            <textarea
-              onChange={(e) => setValText(e.target.value)}
-              placeholder="isi pertanyaan anda disini..."
-              className="w-full p-3 border rounded-lg min-h-[200px]"
-            />
-            <p className="my-3">Contoh Topik</p>
-            <div className="bg-blue-100 rounded-lg p-3 flex items-start gap-3">
-              <p ref={topicRef} className="text-[14px] text-neutral-500 font-light w-full">
-                Hi pak/bu izin memperkenalkan diri saya Haris Hasan mahasiswa Sistem Informasi 2020. Sebelumnya izin
-                untuk menyampaikan topik yang sekiranya bisa dibahas untuk sesi kali ini Bahas dunia Data Science dan
-                bagaimana yang perlu disiapkan untuk menjad seorang Data Scientist Membahas tugas kuliah yang berkaitan
-                dengan pengolahan data{' '}
-              </p>
-              <CopyToClipboard text={topicRef?.current?.innerText} onCopy={() => setIsCopied(true)}>
-                <IconButton>
-                  <ContentCopyOutlinedIcon fontSize="small" />
-                </IconButton>
-              </CopyToClipboard>
+          <div className="mb-8">
+            <p className="mb-3">Pilih Waktu Kosongmu</p>
+            <div className="flex gap-5 mb-5 items-center">
+              <img alt="icon" src="/public/clock-icon.svg" />
+              <Select label="end" className="w-32">
+                <MenuItem value={'8.00'}>8.00pm</MenuItem>
+                <MenuItem value={'8.10'}>8.10pm</MenuItem>
+                <MenuItem value={'8.20'}>8.20pm</MenuItem>
+                <MenuItem value={'9.10'}>9.10pm</MenuItem>
+                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+              </Select>
+              <p>-</p>
+              <Select label="start" className="w-32">
+                <MenuItem value={'8.00'}>8.00pm</MenuItem>
+                <MenuItem value={'8.10'}>8.10pm</MenuItem>
+                <MenuItem value={'8.20'}>8.20pm</MenuItem>
+                <MenuItem value={'9.10'}>9.10pm</MenuItem>
+                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+              </Select>
             </div>
 
-            {valText !== '' ? (
-              <button onClick={nextStep} className="w-full bg-turqouise-500 text-white p-3 rounded-lg mt-10">
-                Konfirmasi Jadwal Booking
-              </button>
-            ) : (
-              <button className="w-full bg-neutral-500 text-black p-3 rounded-lg mt-10" disabled>
-                Konfirmasi Jadwal Booking
-              </button>
-            )}
-          </Box>
-        </Modal>
-      );
-    case 2:
-      return (
-        <Modal open={open} onClose={closeModal} className="flex items-center justify-center">
-          <Box className="px-3 py-5 bg-white rounded-lg w-[588px]">
-            <img className="mx-auto mb-5" alt="test" src="../../../public/success-icon.svg" />
-            <h1 className="text-[24px] mb-3 font-semibold text-center">Request Sesi Mentoring Telah Terkirim!</h1>
-            <p className="text-[16px]">
-              Kami telah mengirim request untuk Sesi 1:1 Mentoring. Selanjutnya kamu akan menerima notifikasi konfirmasi
-              dari Mentor. Atau kamu bisa mengirim pesan untuk lebih lanjut.
-            </p>
-            <hr className="my-5" />
-            <div className="w-20 h-20 mx-auto my-3 overflow-hidden rounded-full">
-              <img alt="test" src="../../../public/default-person.avif" />
+            <div>
+              <p className="mb-3">Referensi</p>
+              <Select label="start" className="w-1/2">
+                <MenuItem value={'week'}>Weekly</MenuItem>
+                <MenuItem value={'month'}>Monthly</MenuItem>
+              </Select>
             </div>
-            <p className="text-center">
-              Sesi Mentoring dengan <span className="text-turqouise-500">Mubeth Praditya</span>
-            </p>
-            <div className="flex gap-7 mt-5 flex-wrap w-full justify-center">
-              <p className="flex items-center">
-                <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
-                {booking.day}, {booking.date}
-              </p>
-              <p className="flex items-center">
-                <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />
-                {booking.clock}
-              </p>
+
+            <div className="inline-flex items-center mt-5 gap-4">
+              <img className="w-6 h-fit" alt="test" src="/g-meet-icon.png" />
+              <button className="bg-blue-400 rounded-lg p-3 text-white">Tambahkan Link Google Meet</button>
             </div>
-            <button className="w-full bg-turqouise-500 text-white p-3 rounded-lg mt-10">Kirim Pesan</button>
-            <button
-              onClick={closeModal}
-              className="w-full bg-white border-2 border-turqouise-500 text-turqouise-500 p-3 rounded-lg mt-3"
-            >
-              Nanti saja
+          </div>
+
+          <div className="flex flex-col mt-5 gap-3">
+            <button onClick={() => close(false)} className="bg-turqouise-500 text-white w-full rounded-lg p-3">
+              Konfirmasi
             </button>
-          </Box>
-        </Modal>
-      );
-  }
+          </div>
+        </Box>
+      </>
+    </Modal>
+  );
 };
 
 const Profile = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [booking, setBooking] = useState({
-    day: '',
-    date: '',
-    clock: '',
-  });
+  const [isEdit, setIsEdit] = useState(false);
   const [active, setActive] = useState(null);
   const [activeClock, setActiveClock] = useState(null);
 
   return (
     <FullLayout isMentor={true}>
-      <BookModal open={isOpen} close={setIsOpen} booking={booking} />
+      <CreateEditModal open={isOpen} close={setIsOpen} type={isEdit} />
       <div className="bg-yellow-200 h-72 w-full relative">
         <div className="flex justify-center">
           <div className="absolute top-48 w-[70%]">
@@ -319,13 +272,25 @@ const Profile = () => {
               <div className="w-[100%]">
                 <div className="sticky top-[9rem] z-0">
                   <div className="rounded-lg shadow-lg p-2 bg-white mb-5">
-                    <h2 className="text-[18px] font-bold">Jadwal Tersedia</h2>
+                    <div className="flex justify-between items-center">
+                      <h2 className="text-[18px] font-bold">Jadwal Tersedia</h2>
+                      <button
+                        className="text-turqouise-600"
+                        onClick={() => {
+                          setIsEdit(true);
+                          setIsOpen(true);
+                        }}
+                      >
+                        Edit
+                      </button>
+                    </div>
                     <hr className="mb-5 mt-3" />
                     <div className="flex gap-5">
-                      {dayBook.map((data) => {
+                      {dayBook.map((data, index) => {
                         return (
                           <CalendarCard
                             {...data}
+                            key={index}
                             isActive={active === data.id}
                             onClick={() => {
                               setBooking((prevState) => ({ ...prevState, day: data.day, date: data.date }));
@@ -361,7 +326,7 @@ const Profile = () => {
                       onClick={() => setIsOpen(true)}
                       className="p-2.5 w-full rounded-lg bg-turqouise-500 text-white mt-5"
                     >
-                      Book Jadwal 1:1 Mentoring
+                      Tambah Jadwal Tersedia
                     </button>
                   </div>
 
@@ -429,11 +394,6 @@ const Profile = () => {
       </div>
     </FullLayout>
   );
-};
-
-BookModal.propTypes = {
-  open: PropTypes.boolean,
-  close: PropTypes.func,
 };
 
 CalendarCard.propTypes = {
