@@ -7,6 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import { talents } from '../../../constants/talents';
+import { Link } from 'react-router-dom';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,7 +47,7 @@ const CardTalent = (props) => {
     <div className="w-full bg-white p-5 rounded-lg border border-neutral-800">
       <div className="flex flex-wrap gap-3 mb-5">
         <div className="rounded-full w-14 h-14 overflow-hidden">
-          <img alt="test" src="/default-person.avif" />
+          <img alt="test" src={props.image} className="h-full object-cover" />
         </div>
 
         <div className="flex-1 flex flex-col">
@@ -106,7 +107,9 @@ const CardTalent = (props) => {
         <button className="p-3 rounded-lg border border-neutral-800">
           <BookmarkBorderOutlinedIcon />
         </button>
-        <button className="flex-1 p-3 bg-neutral-800 rounded-lg text-white">Kirim Pesan</button>
+        <Link to={'/admin/messages'} className="flex-1">
+          <button className="w-full p-3 bg-neutral-800 rounded-lg text-white">Kirim Pesan</button>
+        </Link>
       </div>
     </div>
   );

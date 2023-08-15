@@ -13,15 +13,11 @@ const MentorProfileCard = ({ children }) => {
   return <div className="rounded-lg shadow-lg px-5 py-3.5 bg-white">{children}</div>;
 };
 
-const ListCard = ({ children }) => {
+const ListCard = ({ children, src }) => {
   return (
     <div className="flex gap-5">
       <div className="w-12 h-12 rounded-full overflow-hidden">
-        <img
-          alt="test"
-          src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-          className="w-full h-full object-cover"
-        />
+        <img alt="test" src={src} className="w-full h-full object-cover" />
       </div>
       {children}
     </div>
@@ -174,7 +170,11 @@ const Profile = () => {
                 <MentorProfileCard>
                   <h2 className="font-semibold text-[18px] mb-3.5">Educations</h2>
                   <div className="flex flex-col gap-5">
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
                         <p className="text-[14px]">Doctoral Programs, Computer Science</p>
@@ -182,7 +182,11 @@ const Profile = () => {
                       </div>
                     </ListCard>
 
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://plus.unsplash.com/premium_photo-1680157071241-034d017884ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVpbGRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
                         <p className="text-[14px]">Doctoral Programs, Computer Science</p>
@@ -190,7 +194,11 @@ const Profile = () => {
                       </div>
                     </ListCard>
 
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnVpbGRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
                         <p className="text-[14px]">Doctoral Programs, Computer Science</p>
@@ -203,7 +211,11 @@ const Profile = () => {
                 <MentorProfileCard>
                   <h2 className="font-semibold text-[18px] mb-3.5">Experiences</h2>
                   <div className="flex flex-col gap-5">
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tcGFueXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
                         <p className="text-[14px]">Doctoral Programs, Computer Science</p>
@@ -211,7 +223,11 @@ const Profile = () => {
                       </div>
                     </ListCard>
 
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1435575653489-b0873ec954e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29tcGFueXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
                         <p className="text-[14px]">Doctoral Programs, Computer Science</p>
@@ -219,7 +235,11 @@ const Profile = () => {
                       </div>
                     </ListCard>
 
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNvbXBhbnl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
                         <p className="text-[14px]">Doctoral Programs, Computer Science</p>

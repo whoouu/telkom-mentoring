@@ -163,10 +163,7 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
           </div>
         )}
 
-        {/* info */}
-        <h1 className="text-[18px] mb-3 mt-5">Request untuk Reschedule</h1>
-        <p className="text-neutral-500 text-[16px]">Jadwal Baru</p>
-        <div className="flex gap-10 mt-5 text-turqouise-400">
+        <div className="flex gap-10 mt-5">
           <div className="flex items-center">
             <img alt="test" src="/icon-calendar.svg" className="mr-2" />
             <p>Sabtu, Mei 28</p>
@@ -178,6 +175,7 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
         </div>
 
         {/* body */}
+        <p className="mt-5">Konfirmasi Jadwal Mentoring?</p>
         <div className="flex gap-5">
           <button
             onClick={() => isOpenModal(true)}
@@ -185,8 +183,11 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
           >
             Konfirmasi Jadwal
           </button>
-          <button className="text-neutral-900 bg-white border border-neutral-900 rounded-lg py-3 px-5 mt-7 text-[16px]">
-            Kirim Pesan
+          <button
+            onClick={() => isOpenModal(true)}
+            className="text-neutral-900 bg-white border border-neutral-900 rounded-lg py-3 px-5 mt-7 text-[16px]"
+          >
+            Reschedule
           </button>
         </div>
       </div>
@@ -230,7 +231,7 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
       )}
 
       {/* info */}
-      <div className="flex gap-10 mt-5">
+      <div className="flex gap-10 my-5">
         <div className="flex items-center">
           <img alt="test" src="/icon-calendar.svg" className="mr-2" />
           <p>Sabtu, Mei 28</p>
@@ -241,13 +242,17 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
         </div>
       </div>
 
-      {/* body */}
-      <p className="mb-8 mt-5">Konfirmasi Jadwal Mentoring?</p>
       <div className="inline-flex gap-4">
         <button className="bg-neutral-900 text-white rounded-lg py-3 px-5 text-[16px]">Join with google meet</button>
 
-        <button className="border border-neutral-900 bg-white rounded-lg py-3 px-5 text-[16px]">Reschedule</button>
+        <button
+          onClick={() => isOpenModal(true)}
+          className="border border-neutral-900 bg-white rounded-lg py-3 px-5 text-[16px]"
+        >
+          Reschedule
+        </button>
       </div>
+      <p className="text-gray-400 mt-5">meet.google.com/xgr-scxs-pkg</p>
     </div>
   );
 };

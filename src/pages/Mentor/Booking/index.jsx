@@ -82,7 +82,7 @@ const BookingMentor = () => {
     );
   };
 
-  const NotificationCard = ({ confirm }) => {
+  const NotificationCard = ({ confirm, name }) => {
     const [openConfirm, setOpenConfirm] = useState(false);
     return (
       <>
@@ -90,7 +90,7 @@ const BookingMentor = () => {
         <div className="border rounded-lg p-5">
           <div className="flex justify-between">
             <p>
-              Sesi mentoring bareng <span className="text-red-300">Mubeth Praditya</span>
+              Sesi mentoring bareng <span className="text-red-300">{name}</span>
             </p>
             <p className="text-neutral-400 text-[16px] font-light">Details</p>
           </div>
@@ -127,6 +127,9 @@ const BookingMentor = () => {
     <Layout isMentor={true}>
       <div className="w-3/5 px-20 py-8">
         <h1 className="text-[26px] font-bold mb-3">Bookings</h1>
+        <p className="my-3">
+          Waktu booking akan mengikuti <span className="text-turqouise-600">Waktu Indonesia Barat</span>
+        </p>
         <Box sx={{ width: '100%' }}>
           <Box>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
@@ -137,19 +140,19 @@ const BookingMentor = () => {
           </Box>
           <TabPanel value={value} index={0}>
             <div className="flex flex-col gap-5">
-              <NotificationCard />
-              <NotificationCard />
-              <NotificationCard />
+              <NotificationCard name={'Anakin Skywalker'} />
+              <NotificationCard name={'Luke Skywalker'} />
+              <NotificationCard name={'Danny Skywalker'} />
             </div>
           </TabPanel>
           <TabPanel value={value} index={1}>
             <div className="flex flex-col gap-5">
-              <NotificationCard confirm={true} />
+              <NotificationCard name={'Hannah'} confirm={true} />
             </div>
           </TabPanel>
           <TabPanel value={value} index={2}>
             <div className="flex flex-col gap-5">
-              <NotificationCard />
+              <NotificationCard name={'Johnny Gilbert'} />
             </div>
           </TabPanel>
         </Box>
