@@ -11,8 +11,7 @@ const Step1 = ({ onChange, data, setData }) => {
     <>
       <div className="w-full">
         <h1 className="text-[28px] font-bold">
-          Halo, Haris! Silahkan cek beberapa <br />
-          data kamu
+          Halo, Mubeth! Silahkan cek beberapa data kamu
         </h1>
         <p className="font-normal text-neutral-500 text-[18px] mb-8">Upload foto profile</p>
         {/* form */}

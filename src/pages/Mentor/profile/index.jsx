@@ -73,18 +73,18 @@ const CreateEditModal = ({ open, close, type }) => {
               <img alt="icon" src="/public/clock-icon.svg" />
               <Select label="end" className="w-32">
                 <MenuItem value={'8.00'}>8.00pm</MenuItem>
-                <MenuItem value={'8.10'}>8.10pm</MenuItem>
-                <MenuItem value={'8.20'}>8.20pm</MenuItem>
-                <MenuItem value={'9.10'}>9.10pm</MenuItem>
-                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+                <MenuItem value={'8.30'}>8.30pm</MenuItem>
+                <MenuItem value={'9.00'}>9.00pm</MenuItem>
+                <MenuItem value={'9.30'}>9.30pm</MenuItem>
+                <MenuItem value={'10.00'}>10.00pm</MenuItem>
               </Select>
               <p>-</p>
               <Select label="start" className="w-32">
                 <MenuItem value={'8.00'}>8.00pm</MenuItem>
-                <MenuItem value={'8.10'}>8.10pm</MenuItem>
-                <MenuItem value={'8.20'}>8.20pm</MenuItem>
-                <MenuItem value={'9.10'}>9.10pm</MenuItem>
-                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+                <MenuItem value={'8.30'}>8.30pm</MenuItem>
+                <MenuItem value={'9.00'}>9.00pm</MenuItem>
+                <MenuItem value={'9.30'}>9.30pm</MenuItem>
+                <MenuItem value={'10.00'}>10.00pm</MenuItem>
               </Select>
             </div>
 
@@ -129,7 +129,7 @@ const Profile = () => {
               <div className="rounded-full border-4 border-white h-52 w-52 bg-red-200 overflow-hidden ">
                 <img
                   alt="test"
-                  src="../../../public/thumbnail.avif"
+                  src="../../../public/default-person.avif"
                   className="object-cover bg-red-200 h-full w-full"
                 />
               </div>
@@ -177,8 +177,8 @@ const Profile = () => {
                     >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <p className="text-[14px]">Doctoral Programs</p>
+                        <p className="text-[14px] font-light">2012 - 2015</p>
                       </div>
                     </ListCard>
 
@@ -189,8 +189,8 @@ const Profile = () => {
                     >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <p className="text-[14px]">Master Degree, Informatic</p>
+                        <p className="text-[14px] font-light">2009 - 2012</p>
                       </div>
                     </ListCard>
 
@@ -201,8 +201,8 @@ const Profile = () => {
                     >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <p className="text-[14px]">Bachelor of Information Engineering</p>
+                        <p className="text-[14px] font-light">2005 - 2009</p>
                       </div>
                     </ListCard>
                   </div>
@@ -217,9 +217,9 @@ const Profile = () => {
                       }
                     >
                       <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <h2 className="text-[18px] font-semibold">PT Telekomunikasi Indonesia Tbk</h2>
+                        <p className="text-[14px]">Vice President</p>
+                        <p className="text-[14px] font-light">2020 - Now</p>
                       </div>
                     </ListCard>
 
@@ -230,8 +230,8 @@ const Profile = () => {
                     >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <p className="text-[14px]">Lecturer</p>
+                        <p className="text-[14px] font-light">2022 - Now</p>
                       </div>
                     </ListCard>
 
@@ -241,9 +241,9 @@ const Profile = () => {
                       }
                     >
                       <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <h2 className="text-[18px] font-semibold">Telkom University</h2>
+                        <p className="text-[14px]">Lecturer</p>
+                        <p className="text-[14px] font-light">2019 - Now</p>
                       </div>
                     </ListCard>
                   </div>
@@ -256,7 +256,7 @@ const Profile = () => {
                       <h3 className="text-blue-500">
                         Univariate time series data forecasting of air pollution using LSTM neural network{' '}
                       </h3>
-                      <p className="text-[14px] text-neutral-500">F. Hamami, IA Dahlan</p>
+                      <p className="text-[14px] text-neutral-500">M. Praditya, IA Dahlan</p>
                       <p className="text-[14px] text-neutral-500">
                         2020 International Conference on Advancement in Data Science, E-learning, and...
                       </p>
@@ -264,21 +264,21 @@ const Profile = () => {
 
                     <div className="flex flex-col gap-1">
                       <h3 className="text-blue-500">
-                        Univariate time series data forecasting of air pollution using LSTM neural network{' '}
+                        Implementation face recognition attendance monitoring system for lab surveillance with hash encryption{' '}
                       </h3>
-                      <p className="text-[14px] text-neutral-500">F. Hamami, IA Dahlan</p>
+                      <p className="text-[14px] text-neutral-500">M. Praditya, IA Dahlan, SW Prakosa, KF Somantri</p>
                       <p className="text-[14px] text-neutral-500">
-                        2020 International Conference on Advancement in Data Science, E-learning, and...
+                        Journal of Physics: Conference Series 1641 (1), 012084
                       </p>
                     </div>
 
                     <div className="flex flex-col gap-1">
                       <h3 className="text-blue-500">
-                        Univariate time series data forecasting of air pollution using LSTM neural network{' '}
+                      Big data analytics for processing real-time unstructured data from cctv in traffic management{' '}
                       </h3>
-                      <p className="text-[14px] text-neutral-500">F. Hamami, IA Dahlan</p>
+                      <p className="text-[14px] text-neutral-500">M. Praditya, IA Dahlan, SW Prakosa, KF Somantri</p>
                       <p className="text-[14px] text-neutral-500">
-                        2020 International Conference on Advancement in Data Science, E-learning, and...
+                        2020 International Conference on Data Science and Its Applications (ICoDSA), 1-5
                       </p>
                     </div>
 
@@ -363,18 +363,18 @@ const Profile = () => {
                               <div className="w-12 h-12 rounded-full overflow-hidden">
                                 <img
                                   alt="test"
-                                  src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                                  src="/anakin.jpg"
                                   className="w-full h-full object-cover"
                                 />
                               </div>
                               <div>
-                                <h2 className="font-bold text-[14px]">Cipto</h2>
+                                <h2 className="font-bold text-[14px]">Anakin</h2>
                                 <p className="font-light text-[12px]">Sistem Informasi 2021</p>
                                 <p className="text-[12px]">15 Maret 2023</p>
                               </div>
                             </div>
                             <p className="font-normal text-[14px] text-justify">
-                              Pernah mentoring dengan pak Faqih ngebahas apa yang perlu disiapin buat jadi Data
+                              Pernah mentoring dengan pak Mubeth ngebahas apa yang perlu disiapin buat jadi Data
                               Scientist, dari sesi mentoring ini pikiran saya terbuka dan jadi lebih well prepared buat
                               yang perlu disiapin selama kuliah
                             </p>
@@ -397,7 +397,7 @@ const Profile = () => {
                               </div>
                             </div>
                             <p className="font-normal text-[14px] text-justify">
-                              Pernah mentoring dengan pak Faqih ngebahas apa yang perlu disiapin buat jadi Data
+                              Pernah mentoring dengan pak Mubeth ngebahas apa yang perlu disiapin buat jadi Data
                               Scientist, dari sesi mentoring ini pikiran saya terbuka dan jadi lebih well prepared buat
                               yang perlu disiapin selama kuliah
                             </p>

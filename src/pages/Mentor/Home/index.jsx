@@ -95,9 +95,9 @@ const RightSidebar = ({ isEdit, setOpen }) => {
             </div>
           </div>
           <div className="flex gap-2.5 mb-5">
-            <img alt="img" src="/default-person.avif" className="rounded-full w-16 h-16 object-cover" />
+            <img alt="img" src="/anakin.jpg" className="rounded-full w-16 h-16 object-cover" />
             <div className="flex-1">
-              <h3 className="font-semibold text-[20px]">Karyo</h3>
+              <h3 className="font-semibold text-[20px]">Anakin</h3>
               <p className="text-[14px]">S1 Sistem Informasi</p>
               <p className="text-[12px]">13 Maret 2023</p>
             </div>
@@ -127,10 +127,10 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
   const [expanded, setExpanded] = useState(false);
   if (reschedule) {
     return (
-      <div className="border rounded-lg p-5 mt-5">
+      <div className="border rounded-lg p-5 mt-5s">
         <div className="flex justify-between">
           <p>
-            Request Reschedule Sesi mentoring bareng <span className="text-red-300">{name}</span>
+            Sesi mentoring bareng <span className="text-red-300">{name}</span>
           </p>
           <button className="text-neutral-400 text-[16px] font-light" onClick={() => setExpanded(!expanded)}>
             Details
@@ -139,11 +139,11 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
 
         {expanded && (
           <div>
-            <p className="text-neutral-500 text-[16px] my-3">Mentor</p>
+            <p className="text-neutral-500 text-[16px] my-3">Mentee</p>
 
             <div className="flex gap-3 mb-3">
               <div className="w-12 h-12 rounded-full overflow-hidden">
-                <img alt="test" src="/default-person.avif" />
+                <img alt="test" src="/anakin.jpg" />
               </div>
               <div className="flex flex-col justify-center w-full">
                 <p className="inline text-[18px]">{name}</p>
@@ -206,11 +206,11 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
 
       {expanded && (
         <div>
-          <p className="text-neutral-500 text-[16px] my-3">Mentor</p>
+          <p className="text-neutral-500 text-[16px] my-3">Mentee</p>
 
           <div className="flex gap-3 mb-3">
             <div className="w-12 h-12 rounded-full overflow-hidden">
-              <img alt="test" src="/default-person.avif" />
+              <img alt="test" src="/anakin.jpg" />
             </div>
             <div className="flex flex-col justify-center w-full">
               <p className="inline text-[18px]">Anakin Skywalker</p>
@@ -263,7 +263,7 @@ const FinishModal = ({ setClose, setClosePrevModal }) => {
       <img className="mx-auto my-5" alt="success-icon" src="/public/success-icon.svg" />
       <h3 className="text-center font-bold text-[22px]">Berhasil Membuat Jadwal 1:1 Mentoring!</h3>
       <div className="w-28 h-28 mx-auto rounded-full overflow-hidden">
-        <img src="../../../public/default-person.avif" alt="test" />
+        <img src="../../../public/anakin.jpg" alt="test" />
       </div>
       <p className="text-center my-3.5">
         Sesi Mentoring dengan <span className="text-red-500">Anakin Skywalker</span>
@@ -274,7 +274,7 @@ const FinishModal = ({ setClose, setClosePrevModal }) => {
       <div className="flex gap-5 mx-auto mt-5 justify-between flex-wrap w-fit">
         <p className="text-[14px] flex">
           <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
-          Sabtu, Mei 28
+          Senin, Mei 30
         </p>
         <p className="text-[14px] flex">
           <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
@@ -313,7 +313,7 @@ const ConfirmBookModal = ({ setClose, setClosePrevModal }) => {
       <h1 className="mb-3 font-bold text-[24px] text-center">Reschedule Jadwal Sesi 1:1 Mentoring Berhasil!</h1>
       <hr className="mb-5" />
       <div className="w-28 h-28 mx-auto rounded-full overflow-hidden">
-        <img src="../../../public/default-person.avif" alt="test" />
+        <img src="../../../public/anakin.jpg" alt="test" />
       </div>
       <p className="text-center my-3.5">
         Sesi Mentoring dengan <span className="text-red-500">Anakin Skywalker</span>
@@ -327,7 +327,7 @@ const ConfirmBookModal = ({ setClose, setClosePrevModal }) => {
               Sabtu, Mei 28
             </p>
             <p className="text-[14px] flex">
-              <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
+              <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />9 PM - 10 PM
             </p>
           </div>
         </div>
@@ -336,7 +336,7 @@ const ConfirmBookModal = ({ setClose, setClosePrevModal }) => {
           <div className="flex gap-2 justify-between flex-wrap w-full">
             <p className="text-[14px] flex">
               <img className="w-5 h-5 mr-1" alt="test" src="../../../public/icon-calendar.svg" />
-              Rabu, Mei 28
+              Senin, Mei 30
             </p>
             <p className="text-[14px] flex">
               <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
@@ -396,10 +396,10 @@ const BookModal = ({ open, close }) => {
           <h1 className="mb-3 font-bold text-[24px] text-center">Reschedule Jadwal Sesi 1:1 Mentoring</h1>
           <hr className="mb-5" />
           <div className="w-28 h-28 mx-auto rounded-full overflow-hidden">
-            <img src="../../../public/default-person.avif" alt="test" />
+            <img src="../../../public/anakin.jpg" alt="test" />
           </div>
           <p className="text-center my-3.5">
-            Sesi Mentoring dengan <span className="text-red-500">Mubeth Praditya</span>
+            Sesi Mentoring dengan <span className="text-red-500">Anakin skywalker</span>
           </p>
 
           <div className="flex gap-10 mx-auto justify-between flex-wrap w-fit">
@@ -408,7 +408,7 @@ const BookModal = ({ open, close }) => {
               Sabtu, Mei 28
             </p>
             <p className="text-[14px] flex">
-              <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />8 PM - 8.30 PM
+              <img className="w-5 h-5 mr-1" alt="test" src="../../../public/Sidebar/icon-booking.svg" />9 PM - 10 PM
             </p>
           </div>
 
@@ -424,18 +424,18 @@ const BookModal = ({ open, close }) => {
               <img alt="icon" src="/public/clock-icon.svg" />
               <Select label="end" className="w-32">
                 <MenuItem value={'8.00'}>8.00pm</MenuItem>
-                <MenuItem value={'8.10'}>8.10pm</MenuItem>
-                <MenuItem value={'8.20'}>8.20pm</MenuItem>
-                <MenuItem value={'9.10'}>9.10pm</MenuItem>
-                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+                <MenuItem value={'8.30'}>8.30pm</MenuItem>
+                <MenuItem value={'9.00'}>9.00pm</MenuItem>
+                <MenuItem value={'9.30'}>9.30pm</MenuItem>
+                <MenuItem value={'10.00'}>10.00pm</MenuItem>
               </Select>
 
               <Select label="start" className="w-32">
-                <MenuItem value={'8.00'}>8.00pm</MenuItem>
-                <MenuItem value={'8.10'}>8.10pm</MenuItem>
-                <MenuItem value={'8.20'}>8.20pm</MenuItem>
-                <MenuItem value={'9.10'}>9.10pm</MenuItem>
-                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+              <MenuItem value={'8.00'}>8.00pm</MenuItem>
+                <MenuItem value={'8.30'}>8.30pm</MenuItem>
+                <MenuItem value={'9.00'}>9.00pm</MenuItem>
+                <MenuItem value={'9.30'}>9.30pm</MenuItem>
+                <MenuItem value={'10.00'}>10.00pm</MenuItem>
               </Select>
             </div>
 
@@ -492,18 +492,18 @@ const CreateEditModal = ({ open, close, type }) => {
               <img alt="icon" src="/public/clock-icon.svg" />
               <Select label="end" className="w-32">
                 <MenuItem value={'8.00'}>8.00pm</MenuItem>
-                <MenuItem value={'8.10'}>8.10pm</MenuItem>
-                <MenuItem value={'8.20'}>8.20pm</MenuItem>
-                <MenuItem value={'9.10'}>9.10pm</MenuItem>
-                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+                <MenuItem value={'8.30'}>8.30pm</MenuItem>
+                <MenuItem value={'9.00'}>9.00pm</MenuItem>
+                <MenuItem value={'9.30'}>9.30pm</MenuItem>
+                <MenuItem value={'10.00'}>10.00pm</MenuItem>
               </Select>
               <p>-</p>
               <Select label="start" className="w-32">
                 <MenuItem value={'8.00'}>8.00pm</MenuItem>
-                <MenuItem value={'8.10'}>8.10pm</MenuItem>
-                <MenuItem value={'8.20'}>8.20pm</MenuItem>
-                <MenuItem value={'9.10'}>9.10pm</MenuItem>
-                <MenuItem value={'9.20'}>9.20pm</MenuItem>
+                <MenuItem value={'8.30'}>8.30pm</MenuItem>
+                <MenuItem value={'9.00'}>9.00pm</MenuItem>
+                <MenuItem value={'9.30'}>9.30pm</MenuItem>
+                <MenuItem value={'10.00'}>10.00pm</MenuItem>
               </Select>
             </div>
 
@@ -578,8 +578,8 @@ const HomeMentor = () => {
         </div>
 
         <div className="flex flex-col gap-10 mb-10">
-          <NotificationCard name={'Anakin skywalker'} />
-          <NotificationCard name={'luke skywalker '} reschedule={true} isOpenModal={setOpenModal} />
+          <NotificationCard name={'Luke skywalker'} />
+          <NotificationCard name={'Anakin skywalker'} reschedule={true} isOpenModal={setOpenModal} />
         </div>
 
         <div className="relative w-full">

@@ -10,7 +10,7 @@ const MessagesMentor = () => {
     return (
       <div className="w-full flex gap-3 py-5 pr-16">
         <div className="overflow-hidden rounded-full w-14 h-14">
-          <img alt="test" src="/default-person.avif" />
+          <img alt="test" src="/anakin.jpg" />
         </div>
         <div className="flex-1 flex flex-col gap-2.5">
           <div className="flex justify-between">
@@ -42,7 +42,7 @@ const MessagesMentor = () => {
           <div className="flex flex-col">
             <div className="flex gap-3 border py-8 pl-5">
               <div className="overflow-hidden rounded-full w-14 h-14">
-                <img alt="test" src="/default-person.avif" />
+                <img alt="test" src="/anakin.jpg" />
               </div>
               <div className="flex flex-col justify-center">
                 <p className="inline text-[18px]">Anakin Skywalker</p>

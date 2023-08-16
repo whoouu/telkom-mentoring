@@ -54,7 +54,7 @@ const BookingMentor = () => {
           <h1 className="text-[28px] font-semibold text-center mt-5">Berhasil Membuat Jadwal 1:1 Mentoring</h1>
           <hr className="mb-7 mt-3" />
           <div className="w-28 h-28 mx-auto rounded-full overflow-hidden mb-5">
-            <img src="../../../public/default-person.avif" alt="test" />
+            <img src="../../../public/anakin.jpg" alt="test" />
           </div>
 
           <p className="text-center">
@@ -140,21 +140,21 @@ const BookingMentor = () => {
           </Box>
           <TabPanel value={value} index={0}>
             <div className="flex flex-col gap-5">
-              <NotificationCard name={'Anakin Skywalker'} />
+              {/* <NotificationCard name={'Anakin Skywalker'} /> */}
               <NotificationCard name={'Luke Skywalker'} />
-              <NotificationCard name={'Danny Skywalker'} />
+              {/* <NotificationCard name={'Danny Skywalker'} /> */}
             </div>
           </TabPanel>
           <TabPanel value={value} index={1}>
             <div className="flex flex-col gap-5">
-              <NotificationCard name={'Hannah'} confirm={true} />
+              <NotificationCard name={'Anakin skywalker'} confirm={true} />
             </div>
           </TabPanel>
-          <TabPanel value={value} index={2}>
+          {/* <TabPanel value={value} index={2}>
             <div className="flex flex-col gap-5">
               <NotificationCard name={'Johnny Gilbert'} />
             </div>
-          </TabPanel>
+          </TabPanel> */}
         </Box>
       </div>
     </Layout>
