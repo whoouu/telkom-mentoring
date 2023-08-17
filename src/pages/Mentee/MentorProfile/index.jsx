@@ -221,27 +221,39 @@ const MentorProfile = () => {
                 <MentorProfileCard>
                   <h2 className="font-semibold text-[18px] mb-3.5">Educations</h2>
                   <div className="flex flex-col gap-5">
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <p className="text-[14px]">Doctoral Programs</p>
+                        <p className="text-[14px] font-light">2012 - 2015</p>
                       </div>
                     </ListCard>
 
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://plus.unsplash.com/premium_photo-1680157071241-034d017884ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVpbGRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <p className="text-[14px]">Master Degree, Informatic</p>
+                        <p className="text-[14px] font-light">2009 - 2012</p>
                       </div>
                     </ListCard>
 
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnVpbGRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <p className="text-[14px]">Bachelor of Information Engineering</p>
+                        <p className="text-[14px] font-light">2005 - 2009</p>
                       </div>
                     </ListCard>
                   </div>
@@ -250,27 +262,39 @@ const MentorProfile = () => {
                 <MentorProfileCard>
                   <h2 className="font-semibold text-[18px] mb-3.5">Experiences</h2>
                   <div className="flex flex-col gap-5">
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tcGFueXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <h2 className="text-[18px] font-semibold">PT Telekomunikasi Indonesia Tbk</h2>
+                        <p className="text-[14px]">Vice President</p>
+                        <p className="text-[14px] font-light">2020 - Now</p>
                       </div>
                     </ListCard>
 
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1435575653489-b0873ec954e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29tcGFueXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
                         <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <p className="text-[14px]">Lecturer</p>
+                        <p className="text-[14px] font-light">2022 - Now</p>
                       </div>
                     </ListCard>
 
-                    <ListCard>
+                    <ListCard
+                      src={
+                        'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNvbXBhbnl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
+                      }
+                    >
                       <div className="flex-1">
-                        <h2 className="text-[18px] font-semibold">Institut Teknologi Bandung</h2>
-                        <p className="text-[14px]">Doctoral Programs, Computer Science</p>
-                        <p className="text-[14px] font-light">2015 - 2019</p>
+                        <h2 className="text-[18px] font-semibold">Telkom University</h2>
+                        <p className="text-[14px]">Lecturer</p>
+                        <p className="text-[14px] font-light">2019 - Now</p>
                       </div>
                     </ListCard>
                   </div>
@@ -283,7 +307,7 @@ const MentorProfile = () => {
                       <h3 className="text-blue-500">
                         Univariate time series data forecasting of air pollution using LSTM neural network{' '}
                       </h3>
-                      <p className="text-[14px] text-neutral-500">F. Hamami, IA Dahlan</p>
+                      <p className="text-[14px] text-neutral-500">M. Praditya, IA Dahlan</p>
                       <p className="text-[14px] text-neutral-500">
                         2020 International Conference on Advancement in Data Science, E-learning, and...
                       </p>
@@ -293,7 +317,7 @@ const MentorProfile = () => {
                       <h3 className="text-blue-500">
                         Univariate time series data forecasting of air pollution using LSTM neural network{' '}
                       </h3>
-                      <p className="text-[14px] text-neutral-500">F. Hamami, IA Dahlan</p>
+                      <p className="text-[14px] text-neutral-500">M. Praditya, IA Dahlan</p>
                       <p className="text-[14px] text-neutral-500">
                         2020 International Conference on Advancement in Data Science, E-learning, and...
                       </p>
@@ -303,7 +327,7 @@ const MentorProfile = () => {
                       <h3 className="text-blue-500">
                         Univariate time series data forecasting of air pollution using LSTM neural network{' '}
                       </h3>
-                      <p className="text-[14px] text-neutral-500">F. Hamami, IA Dahlan</p>
+                      <p className="text-[14px] text-neutral-500">M. Praditya, IA Dahlan</p>
                       <p className="text-[14px] text-neutral-500">
                         2020 International Conference on Advancement in Data Science, E-learning, and...
                       </p>
@@ -394,7 +418,7 @@ const MentorProfile = () => {
                               </div>
                             </div>
                             <p className="font-normal text-[14px] text-justify">
-                              Pernah mentoring dengan pak Faqih ngebahas apa yang perlu disiapin buat jadi Data
+                              Pernah mentoring dengan pak Mubeth ngebahas apa yang perlu disiapin buat jadi Data
                               Scientist, dari sesi mentoring ini pikiran saya terbuka dan jadi lebih well prepared buat
                               yang perlu disiapin selama kuliah
                             </p>
