@@ -123,7 +123,7 @@ const RightSidebar = ({ isEdit, setOpen }) => {
   );
 };
 
-const NotificationCard = ({ reschedule, isOpenModal, name }) => {
+const NotificationCard = ({ reschedule, isOpenModal, name, completeModal }) => {
   const [expanded, setExpanded] = useState(false);
   if (reschedule) {
     return (
@@ -178,7 +178,7 @@ const NotificationCard = ({ reschedule, isOpenModal, name }) => {
         <p className="mt-5">Konfirmasi Jadwal Mentoring?</p>
         <div className="flex gap-5">
           <button
-            onClick={() => isOpenModal(true)}
+            onClick={() => completeModal(true)}
             className="bg-neutral-900 text-white rounded-lg py-3 px-5 mt-7 text-[16px]"
           >
             Konfirmasi Jadwal
@@ -536,6 +536,7 @@ const HomeMentor = () => {
   const [booking, setBooking] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
+  const [openCompleteModal, setOpenCompleteModal] = useState(false);
 
   // create and edit
   const [createModal, setCreateModal] = useState(false);
@@ -551,6 +552,13 @@ const HomeMentor = () => {
     <Layout isMentor={true} rightSidebar={<RightSidebar setOpen={setCreateModal} isEdit={setIsEdit} />}>
       {/* left side */}
       <CreateEditModal open={createModal} close={setCreateModal} type={isEdit} />
+      <Modal
+        className="flex items-center justify-center"
+        open={openCompleteModal}
+        onClose={() => setOpenCompleteModal(false)}
+      >
+        <FinishModal setClose={setOpenCompleteModal} />
+      </Modal>
       <BookModal open={openModal} close={setOpenModal} />
       <div className="flex-1 overflow-auto py-8 px-14">
         <h1 className="text-[28px] font-bold mb-2">Welcome</h1>
@@ -579,7 +587,12 @@ const HomeMentor = () => {
 
         <div className="flex flex-col gap-10 mb-10">
           <NotificationCard name={'Anakin skywalker'} />
-          <NotificationCard name={'luke skywalker '} reschedule={true} isOpenModal={setOpenModal} />
+          <NotificationCard
+            name={'luke skywalker '}
+            completeModal={setOpenCompleteModal}
+            reschedule={true}
+            isOpenModal={setOpenModal}
+          />
         </div>
 
         <div className="relative w-full">
