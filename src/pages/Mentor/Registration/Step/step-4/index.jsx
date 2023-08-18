@@ -52,7 +52,7 @@ const Step4 = ({ data, setData, onChange }) => {
             <p className="font-bold mb-3">Pengalaman Bekerja</p>
             {toggleWork && (
               <button className="flex justify-between gap-5 p-4 mb-4 rounded-lg border-2 shadow-lg w-full">
-                Telkom Indonesia Tbk
+                PT Telekomunikasi Indonesia Tbk
                 <div>
                   <DeleteOutlinedIcon onClick={() => setToggleWork(false)} className="text-red-600" />
                   <ChevronRightOutlinedIcon />

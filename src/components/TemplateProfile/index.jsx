@@ -116,24 +116,24 @@ const TemplateProfile = ({ name, faculty, bachelor, scrollY, images, interest, a
                   <h3 className="text-blue-400">
                     Univariate time series data forecasting of air pollution using LSTM neural network{' '}
                   </h3>
-                  <p>F. Hamami, IA Dahlan</p>
+                  <p>M. Praditya, IA Dahlan</p>
                   <p>2020 International Conference on Advancement in Data Science, E-learning, and...</p>
                 </div>
 
                 <div className="mb-3">
                   <h3 className="text-blue-400">
-                    Univariate time series data forecasting of air pollution using LSTM neural network{' '}
+                    Implementation face recognition attendance monitoring system for lab surveillance with hash encryption{' '}
                   </h3>
-                  <p>F. Hamami, IA Dahlan</p>
-                  <p>2020 International Conference on Advancement in Data Science, E-learning, and...</p>
+                  <p>M. Praditya, IA Dahlan, SW Prakosa, KF Somantri</p>
+                  <p>Journal of Physics: Conference Series 1641 (1), 012084</p>
                 </div>
 
                 <div className="mb-3">
                   <h3 className="text-blue-400">
-                    Univariate time series data forecasting of air pollution using LSTM neural network{' '}
+                    Big data analytics for processing real-time unstructured data from cctv in traffic management{' '}
                   </h3>
-                  <p>F. Hamami, IA Dahlan</p>
-                  <p>2020 International Conference on Advancement in Data Science, E-learning, and...</p>
+                  <p>M. Praditya, IA Dahlan, SW Prakosa, KF Somantri</p>
+                  <p>2020 International Conference on Data Science and Its Applications (ICoDSA), 1-5</p>
                 </div>
               </>
             )}
